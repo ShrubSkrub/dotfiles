@@ -86,8 +86,10 @@ nnoremap ;; :w<CR>
 set is
 " Highlight stuff
 set t_Co=256
+" colorscheme fresh
+
 set cursorline
-hi CursorLine cterm=reverse 
+hi CursorLine cterm=reverse
 hi CursorLineNr cterm=reverse
 
 " Spaces higlight

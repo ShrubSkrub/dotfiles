@@ -2,6 +2,8 @@
 ! xterm*Foreground: white
 ! xterm*cursorColor: red
 
+XTerm*termName: xterm-256color
+
 ! Fonts
 xterm*faceName: Source Code Pro
 xterm*faceSize: 12
@@ -9,8 +11,9 @@ xterm.*.locale: true
 
 ! special
 *.foreground:   #7ea2b4
-*.background:   #161b1d
-*.cursorColor:  #7ea2b4
+! *.background:   #161b1d | OG
+*.background:   #0b0b13
+! *.cursorColor:  #7ea2b4
 
 ! black
 *.color0:       #161b1d

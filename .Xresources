@@ -12,7 +12,8 @@ xterm*faceSize: 12
 ! Atelierlakeside (dark) Color Scheme
 ! special
 *.foreground:   #7ea2b4
-*.background:   #161b1d
+! *.background:   #161b1d | OG
+*.background:   #0b0b13
 *.cursorColor:  #FFFFFF
 
 ! *.cursorColor:  #7ea2b4
