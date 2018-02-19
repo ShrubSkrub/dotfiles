@@ -19,6 +19,9 @@ Plugin 'tpope/vim-commentary'
 " Syntastic for Code Checking
 Plugin 'vim-syntastic/syntastic'
 
+" Gitgutter for version control
+Plugin 'airblade/vim-gitgutter'
+
 " Autoclose " ( { | too laggy
 " Plugin 'Townk/vim-autoclose'
 
