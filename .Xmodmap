@@ -1,0 +1,28 @@
+! Natural scrolling
+pointer = 1 2 3 5 4 7 6 8 9 10 11 12
+
+! Switch Chromebook Search and Control
+remove mod4 = Super_L
+add control = Super_L
+
+! remove control = Control_L
+add mod4 = Control_L
+
+! F9 = Insert (so do Shift+Ins for Paste)
+keycode 75 = Insert Insert
+keycode 75 = Insert Insert Insert Insert Insert Insert
+
+! Keycode 37 is Control_L
+! Use "Control" as function key for keymap below
+keycode 37 = Mode_switch
+
+keycode 31 = i I Up
+keycode 44 = j J Left
+keycode 45 = k K Down
+keycode 46 = l L Right
+keycode 22 = BackSpace BackSpace Delete
+keycode 43 = h H Home
+keycode 57 = n N End
+keycode 30 = u U Prior
+keycode 32 = o O Next
+keycode 47 = semicolon colon Delete
