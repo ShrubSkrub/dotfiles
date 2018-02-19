@@ -26,3 +26,4 @@ keycode 57 = n N End
 keycode 30 = u U Prior
 keycode 32 = o O Next
 keycode 47 = semicolon colon Delete
+keycode 48 = apostrophe quotedbl BackSpace
