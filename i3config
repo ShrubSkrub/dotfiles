@@ -186,10 +186,13 @@ exec xmodmap ~/.Xmodmap
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec --no-startup-id feh --bg-scale '/home/shrub/Downloads/pwf.png'
+exec --no-startup-id feh --bg-center '/home/shrub/Downloads/pwf.png'
 
 # Open terminal for easy start!
 exec --no-startup-id xterm
+
+# Start compton
+exec --no-startup-id compton
 
 # Scratchpad bindings
 bindsym $mod+Shift+m move scratchpad
