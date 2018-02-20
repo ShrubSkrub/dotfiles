@@ -159,6 +159,12 @@ bar {
         tray_output primary
 
         i3bar_command i3bar -t
+        font pango:Source Code Pro Medium 10
+
+        # hidden bar, show with mod
+        mode hide
+        hidden_state hide
+        modifier $mod
 
   colors {
     background #000000
@@ -208,7 +214,7 @@ bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
 # WINDOW CUSOMIZATIONS
-new_window pixel 1
+new_window pixel 2
 new_float normal
 hide_edge_borders both
 
@@ -228,4 +234,4 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#E
 
 # i3 gaps specific config
 gaps inner 10
-smart_gaps on
+# smart_gaps on
