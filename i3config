@@ -158,6 +158,8 @@ bar {
         status_command i3status
         tray_output primary
 
+        i3bar_command i3bar -t
+
   colors {
     background #000000
     statusline #ADADAD
@@ -184,19 +186,19 @@ exec xmodmap ~/.Xmodmap
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec feh --bg-scale '/home/shrub/Downloads/plainwallpaper.png'
+exec feh --bg-scale '/home/shrub/Downloads/pwf.png'
 
 # Open terminal for easy start!
-exec xterm -fa 'Source Code Pro' -fs 12
+exec xterm
 
 # Open dense terminal
 bindsym $mod+Shift+Return exec urxvt +sb
 
 # Lock with i3lock
-bindsym $mod+n exec i3lock -i Downloads/plainwallpaper.png -f
+bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
 
 # Lock when afk
-exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/plainwallpaper.png -f"
+exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
 # WINDOW CUSOMIZATIONS
 new_window pixel 1
@@ -217,3 +219,6 @@ client.background       #FFFFFF
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
+# i3 gaps!!!!!
+gaps inner 10
+smart_gaps on
