@@ -186,10 +186,14 @@ exec xmodmap ~/.Xmodmap
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec feh --bg-scale '/home/shrub/Downloads/pwf.png'
+exec --no-startup-id feh --bg-scale '/home/shrub/Downloads/pwf.png'
 
 # Open terminal for easy start!
-exec xterm
+exec --no-startup-id xterm
+
+# Scratchpad bindings
+bindsym $mod+Shift+m move scratchpad
+bindsym $mod+m scratchpad show
 
 # Open dense terminal
 bindsym $mod+Shift+Return exec urxvt +sb
@@ -219,6 +223,6 @@ client.background       #FFFFFF
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
-# i3 gaps!!!!!
+# i3 gaps specific config
 gaps inner 10
 smart_gaps on
