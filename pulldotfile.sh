@@ -55,6 +55,15 @@ else
     cp /home/shrub/dotfiles/.Xmodmap /home/shrub/.Xmodmap
 fi
 
+# Copy compton.conf
+cmp /home/shrub/dotfiles/compton.conf /home/shrub/.config/compton.conf
+if [ $? -eq 0 ];then
+    echo "No change to compton.conf"
+else
+    echo "Backing up compton.conf..."
+    cp /home/shrub/dotfiles/compton.conf /home/shrub/.config/compton.conf
+fi
+
 # Rename i3 files upon copy
 # Copy i3config
 cmp /home/shrub/dotfiles/i3config /home/shrub/.config/i3/config

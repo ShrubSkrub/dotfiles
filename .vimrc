@@ -72,6 +72,9 @@ syntax on
 " Enable mouse support
 set mouse=a
 
+" Clipboard!
+set clipboard=unnamedplus
+
 " Tab = 4 spaces | set expandtab to get spaces
 set tabstop=4
 set shiftwidth=4
