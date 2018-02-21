@@ -215,7 +215,8 @@ for_window [instance="xterm" title="todof"] resize shrink left 50, resize shrink
 
 # Lock with i3lock
 # bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
-bindsym $mod+n exec lock -p -t "Locked" -- scrot
+# bindsym $mod+n exec lock -p -t "Locked" -- scrot
+bindsym $mod+n exec lock -p -t " " -- scrot
 
 # Lock when afk
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
