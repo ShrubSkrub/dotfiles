@@ -1,22 +1,41 @@
 # Little config snippets that don't deserve their own file
 
-.bashrc
-{
-    # CUSTOM BASH PROMPT
-    #   Old
-    # export PS1="\u@\h\[$(tput sgr0)\]\[\033[38;5;14m\]:\[$(tput sgr0)\]\[\033[38;5;13m\]\w\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-    # OLD, had user and host
-    # export PS1="\[\e[34m\]\T\[\e[m\]-\u@\h\[\e[32m\]:\[\e[m\]\[\e[35m\]\w\[\e[m\]\[\e[32m\]\\$\[\e[m\] "
-    #   Current
-    # New! Shortened
-    export PS1=" \[\e[34m\]\T\[\e[m\] \[\e[35m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
 
-    # Notes alias!
-    alias todo="vim /home/shrub/rcode/todo.md"
+################################################################################
+# .bashrc
+#
+# CUSTOM BASH PROMPT
+#   Old
+# export PS1="\u@\h\[$(tput sgr0)\]\[\033[38;5;14m\]:\[$(tput sgr0)\]\[\033[38;5;13m\]\w\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+# OLD, had user and host
+# export PS1="\[\e[34m\]\T\[\e[m\]-\u@\h\[\e[32m\]:\[\e[m\]\[\e[35m\]\w\[\e[m\]\[\e[32m\]\\$\[\e[m\] "
+#   Current
+# New! Shortened
+export PS1=" \[\e[34m\]\T\[\e[m\] \[\e[35m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
+
+# Notes alias!
+alias todo="vim /home/shrub/rcode/todo.md"
+
+################################################################################
+# ranger, rc.conf
+#
+# Don't forget to show hidden files!
+set show_hidden true
+
+################################################################################
+# Firefox, userchrome.css
+#
+/*
+ * Only show close buttons on background tabs when hovering with the mouse
+ * From: https://github.com/Timvde/UserChrome-Tweaks/blob/b8ee8b3b81030ad3e6b892c97e66996597dbb3d9/tabs/close-button-hover.css
+ * Contributor(s): Timvde
+ */
+
+.tabbrowser-tab:not([selected]):not([pinned]) .tab-close-button {
+  display: none !important;
 }
 
-ranger, rc.conf
-{
-    # Don't forget to show hidden files!
-    set show_hidden true
+.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
+  display: -moz-box !important;
 }
+
