@@ -59,7 +59,7 @@ run_watch VPNC {
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = "/proc/sys/net/ipv4/conf/tun0"
-	format_down=""
+	format_down="VPN"
 }
 
 tztime local {

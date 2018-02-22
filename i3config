@@ -187,8 +187,9 @@ bar {
 bind sym $mod+BackSpace exec xdotool key Delete
 
 # Setup xmodmap
-# temp disable, doesn't seem to work anyway
-# exec xmodmap ~/.Xmodmap
+# Buggy, but seems to work after two tries, so whatever
+exec xmodmap ~/.Xmodmap
+exec xmodmap ~/.Xmodmap
 
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
@@ -199,7 +200,8 @@ exec --no-startup-id feh --bg-fill '/home/shrub/Downloads/foxwall.jpg'
 exec --no-startup-id xterm
 
 # Start compton
-# exec --no-startup-id compton
+# Stupid thing leaves me with blank screen, need to fix
+# exec --no-startup-id compton -b
 
 # Scratchpad bindings
 bindsym $mod+Shift+m move scratchpad
