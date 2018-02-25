@@ -5,7 +5,8 @@
 XTerm*termName: xterm-256color
 
 ! Fonts
-xterm*faceName: Source Code Pro
+! xterm*faceName: Source Code Pro | Still nice, but Roboto is condensed, sharper
+xterm*faceName: Roboto Mono
 xterm*faceSize: 12
 xterm.*.locale: true
 
@@ -49,3 +50,7 @@ xterm.*.locale: true
 
 ! Copy to clipboard
 xterm.*.selectToClipboard: true
+
+! Cursors
+Xcursor.theme: Breeze-Adapta
+! Xcursor.size: 1

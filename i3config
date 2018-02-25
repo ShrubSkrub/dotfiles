@@ -14,7 +14,8 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 8
-font pango:Source Code Pro Medium 10
+# font pango:Source Code Pro Medium 10
+font pango:Roboto Mono Medium 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -73,7 +74,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+semicolon split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+apostrophe split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -159,7 +160,8 @@ bar {
         tray_output primary
 
         i3bar_command i3bar -t
-        font pango:Source Code Pro Medium 10
+        # font pango:Source Code Pro Medium 10
+        font pango:Roboto Mono Regular 10
 
         # hidden bar, show with mod
         mode hide
@@ -187,18 +189,21 @@ bar {
 bind sym $mod+BackSpace exec xdotool key Delete
 
 # Setup xmodmap
+# Buggy, but seems to work after two tries, so whatever
+exec xmodmap ~/.Xmodmap
 exec xmodmap ~/.Xmodmap
 
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec --no-startup-id feh --bg-center '/home/shrub/Downloads/pwf.png'
+exec --no-startup-id feh --bg-fill '/home/shrub/Downloads/foxwall.jpg'
 
 # Open terminal for easy start!
 exec --no-startup-id xterm
 
 # Start compton
-exec --no-startup-id compton
+# Stupid thing leaves me with blank screen, need to fix
+# exec --no-startup-id compton -b
 
 # Scratchpad bindings
 bindsym $mod+Shift+m move scratchpad
@@ -207,8 +212,19 @@ bindsym $mod+m scratchpad show
 # Open dense terminal
 bindsym $mod+Shift+Return exec urxvt +sb
 
+# Open quick vim/todo floating term
+bindsym $mod+v exec xterm -T todof -e "vim ~/rcode/todo.md"
+for_window [instance="xterm" title="todof"] floating enable;
+for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
+
 # Lock with i3lock
-bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
+# bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
+# bindsym $mod+n exec lock -p -t "Locked" -- scrot
+bindsym $mod+n exec lock -p -t " " -- scrot
+
+# Brightness with mod
+bindsym $mod+F6 exec brightness down
+bindsym $mod+F7 exec brightness up
 
 # Lock when afk
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
