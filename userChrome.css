@@ -158,3 +158,9 @@ browser[type="content-primary"], browser[type="content"] {
 browser, browser.display.background_color, tabbrowser tabpanels {
     background-color: var(--bg-dark) !important;
 }
+
+/*********************************************************/
+/**** OTHER STUFF ****/
+/*********************************************************/
+
+/* TODO: Add shadowfox */
