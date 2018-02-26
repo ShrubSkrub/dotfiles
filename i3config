@@ -223,6 +223,9 @@ bindsym $mod+v exec xterm -T todof -e "vim ~/rcode/todo.md"
 for_window [instance="xterm" title="todof"] floating enable;
 for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
 
+# Quick open Firefox
+bindsym $mod+Shift+f exec firefox
+
 # Lock with i3lock
 # bindsym $mod+n exec i3lock -i ~/Downloads/pwf.png -f
 # bindsym $mod+n exec lock -p -t "Locked" -- scrot
