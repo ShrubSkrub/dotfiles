@@ -266,6 +266,7 @@ mode "wallpaper" {
     bindsym g exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
     bindsym s exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
     bindsym n exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
+    bindsym d exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/dblue.jpg'
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 
