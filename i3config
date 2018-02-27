@@ -262,11 +262,11 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#E
 
 mode "wallpaper" {
 
-    bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'
-    bindsym g exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
-    bindsym s exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
-    bindsym n exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
-    bindsym d exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/dblue.jpg'
+    bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'; mode "default"
+    bindsym g exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'; mode "default"
+    bindsym s exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'; mode "default"
+    bindsym n exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'; mode "default"
+    bindsym d exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/dblue.jpg'; mode "default"
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 
@@ -277,6 +277,24 @@ mode "wallpaper" {
 }
 
 bindsym $mod+Shift+w mode "wallpaper"
+
+
+mode "launch" {
+
+    bindsym f exec firefox; mode "default"
+    bindsym s exec wireshark; mode "default"
+    bindsym t exec xterm; mode "default"
+    bindsym c exec code; mode "default"
+
+    bindsym w mode "wallpaper"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+
+bindsym $mod+Tab mode "launch"
 
 # i3 gaps specific config
 gaps inner 10
