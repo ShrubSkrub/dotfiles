@@ -149,7 +149,7 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -202,7 +202,7 @@ exec xmodmap ~/.Xmodmap
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec --no-startup-id feh --bg-fill '/home/shrub/Downloads/foxwall.jpg'
+exec --no-startup-id feh --randomize --bg-fill '/home/shrub/dotfiles/wallpapers/*'
 
 # Open terminal for easy start!
 exec --no-startup-id xterm
@@ -259,6 +259,21 @@ client.background       #FFFFFF
 
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
+
+mode "wallpaper" {
+
+    bindsym t exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'
+    bindsym g exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
+    bindsym s exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
+    bindsym n exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym w mode "default"
+}
+
+bindsym $mod+Shift+w mode "wallpaper"
 
 # i3 gaps specific config
 gaps inner 10
