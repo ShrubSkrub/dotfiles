@@ -202,7 +202,7 @@ exec xmodmap ~/.Xmodmap
 # Set background
 # exec ./ifscriptfeh.sh ~.fehbg
 # exec eval `cat ~/.fehbg`
-exec --no-startup-id feh --randomize --bg-fill '/home/shrub/dotfiles/wallpapers/*'
+exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 
 # Open terminal for easy start!
 exec --no-startup-id xterm
@@ -262,10 +262,12 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#E
 
 mode "wallpaper" {
 
-    bindsym t exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'
-    bindsym g exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
-    bindsym s exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
-    bindsym n exec feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
+    bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'
+    bindsym g exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
+    bindsym s exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
+    bindsym n exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
+
+    bindsym r exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
