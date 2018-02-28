@@ -292,6 +292,8 @@ mode "launch" {
     bindsym c exec code; mode "default"
 
     bindsym w mode "wallpaper"
+    bindsym v mode $volume
+    bindsym e mode "passthrough"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -309,6 +311,21 @@ mode "passthrough" {
 }
 
 bindsym $mod+Escape mode "passthrough"
+
+set $volume "Volume: [u]p  [d]own  [m]ute"
+mode $volume {
+
+    bindsym u exec volume up
+    bindsym d exec volume down
+    bindsym m exec volume mute toggle
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym v mode "default"
+}
+
+bindsym $mod+Shift+v mode $volume
 
 # i3 gaps specific config
 gaps inner 10
