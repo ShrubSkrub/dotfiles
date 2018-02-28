@@ -235,6 +235,11 @@ bindsym $mod+n exec lock -p -t " " -- scrot
 bindsym $mod+F6 exec brightness down
 bindsym $mod+F7 exec brightness up
 
+# Volume with mod
+bindsym $mod+F8 exec volume mute toggle
+bindsym $mod+Insert exec volume down
+bindsym $mod+F10 exec volume up
+
 # Lock when afk | I can't tell if this is working or not...
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
