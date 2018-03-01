@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Goyo Vim | :Goyo for writing | Don't really need, turn on when needed
-Plugin 'junegunn/goyo.vim'
+" Plugin 'junegunn/goyo.vim'
 
 " Gcc Commentor
 Plugin 'tpope/vim-commentary'
@@ -21,6 +21,9 @@ Plugin 'vim-syntastic/syntastic'
 
 " Gitgutter for version control
 Plugin 'airblade/vim-gitgutter'
+
+" Format c++, java, js with :ClangFormat
+Plugin 'rhysd/vim-clang-format'
 
 " Autoclose " ( { | too laggy
 " Plugin 'Townk/vim-autoclose'
@@ -51,9 +54,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
+nmap <Leader>[ :lprev<Enter>
+nmap <Leader>] :lnext<Enter>
+
 " commentary.vim settings
 " set commenting /* */ to //
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
+
+" clang format settings
+nmap <Leader>f :ClangFormat<Enter>
 
 " Actual regularish .vimrc stuff
 " type jk quickly for Escape
