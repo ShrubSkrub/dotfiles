@@ -130,3 +130,16 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 15
 " F2 to open directory tree
 map <F2> :Lexplore <Enter>
+
+" Compile c++
+autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
+
+" Show 80 chars with \l
+fun! ToggleCC()
+    if &cc == ''
+        set cc=80
+    else
+        set cc=
+    endif
+endfun
+nmap <Leader>l :call ToggleCC()<CR>
