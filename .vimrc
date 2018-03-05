@@ -143,3 +143,13 @@ fun! ToggleCC()
     endif
 endfun
 nmap <Leader>l :call ToggleCC()<CR>
+
+func! WordProcessorMode() 
+  setlocal formatoptions=1 
+  setlocal noexpandtab 
+  setlocal spell spelllang=en_us 
+  set complete+=s
+  setlocal wrap 
+  setlocal linebreak 
+endfu 
+com! WP call WordProcessorMode()
