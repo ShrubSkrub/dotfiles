@@ -158,3 +158,8 @@ com! WP call WordProcessorMode()
 
 " Map leader to space
 map <Space> <Leader>
+
+" leader write
+nmap <Leader>; :w<CR>
+nmap <Leader>z ZZ
+nmap <Leader>q ZQ
