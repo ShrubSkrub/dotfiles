@@ -155,3 +155,6 @@ func! WordProcessorMode()
   setlocal linebreak 
 endfu 
 com! WP call WordProcessorMode()
+
+" Map leader to space
+map <Space> <Leader>
