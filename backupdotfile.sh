@@ -67,4 +67,13 @@ else
     cp /home/shrub/.config/i3status/config /home/shrub/dotfiles/i3statusconfig
 fi
 
+# Copy userChrome.css
+cmp /home/shrub/.mozilla/firefox/0g49vgfs.default/chrome/userChrome.css /home/shrub/dotfiles/userChrome.css
+if [ $? -eq 0 ];then
+    echo "No change to userChrome.css"
+else
+    echo "Backing up userChrome.css"
+    cp /home/shrub/.mozilla/firefox/0g49vgfs.default/chrome/userChrome.css /home/shrub/dotfiles/userChrome.css
+fi
+
 echo "Finished copying files."
