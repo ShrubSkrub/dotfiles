@@ -9,7 +9,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 " Goyo Vim | :Goyo for writing | Don't really need, turn on when needed
 " Plugin 'junegunn/goyo.vim'
 
@@ -133,6 +132,9 @@ map <F2> :Lexplore <Enter>
 
 " Compile c++
 autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
+
+" Run c++
+autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
 
 " Show 80 chars with \l
 fun! ToggleCC()
