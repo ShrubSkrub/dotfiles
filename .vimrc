@@ -53,8 +53,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
-nmap <Leader>[ :lprev<Enter>
-nmap <Leader>] :lnext<Enter>
+nmap <Leader>n :lprev<Enter>
+nmap <Leader>N :lnext<Enter>
 
 " commentary.vim settings
 " set commenting /* */ to //
@@ -129,6 +129,7 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 15
 " F2 to open directory tree
 map <F2> :Lexplore <Enter>
+nmap <Leader>b :Lexplore <Enter>
 
 " Compile c++
 autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
