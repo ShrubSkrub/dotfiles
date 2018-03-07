@@ -147,14 +147,14 @@ fun! ToggleCC()
 endfun
 nmap <Leader>l :call ToggleCC()<CR>
 
-func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
-  setlocal spell spelllang=en_us 
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal spell spelllang=en_us
   set complete+=s
-  setlocal wrap 
-  setlocal linebreak 
-endfu 
+  setlocal wrap
+  setlocal linebreak
+endfu
 com! WP call WordProcessorMode()
 
 " Map leader to space
@@ -164,3 +164,6 @@ map <Space> <Leader>
 nmap <Leader>; :w<CR>
 nmap <Leader>z ZZ
 nmap <Leader>q ZQ
+
+" Remove all trailing whitespace by pressing F5
+nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
