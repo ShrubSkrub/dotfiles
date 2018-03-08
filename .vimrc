@@ -154,6 +154,8 @@ func! WordProcessorMode()
   set complete+=s
   setlocal wrap
   setlocal linebreak
+  setlocal nonumber
+  setlocal nocursorline
 endfu
 com! WP call WordProcessorMode()
 
