@@ -66,9 +66,11 @@ nmap <Leader>f :ClangFormat<Enter>
 " Actual regularish .vimrc stuff
 " type jk quickly for Escape
 imap jk <Esc>
+
 " Visual up and down. This makes multi (visual) lines easier to navigate
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
+
 " Visual autocomplete
 set wildmenu
 " Show last command on the bottom
@@ -154,8 +156,8 @@ func! WordProcessorMode()
   set complete+=s
   setlocal wrap
   setlocal linebreak
-  setlocal nonumber
-  setlocal nocursorline
+    hi CursorLine cterm=NONE
+    hi CursorLineNr cterm=reverse
 endfu
 com! WP call WordProcessorMode()
 
