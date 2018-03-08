@@ -167,5 +167,5 @@ nmap <Leader>; :w<CR>
 nmap <Leader>z ZZ
 nmap <Leader>q ZQ
 
-" Remove all trailing whitespace by pressing F5
+" Remove all trailing whitespace
 nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
