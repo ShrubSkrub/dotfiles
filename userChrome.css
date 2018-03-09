@@ -1,4 +1,4 @@
-@import url('file:///home/shrub/.cache/homepage/colors.css');
+/* @import url('file:///home/shrub/.cache/homepage/colors.css'); */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* Remove fullscreen transition animation */
@@ -21,8 +21,8 @@
     /* --bg-light: #575c66 ; */
     /* --bg-light: #464953; */
     --bg-light: #0b0b13;
-    --fg-dark: var(--bg);
-    --fg-light: var(--fg);
+    --fg-dark: #0b0b13;
+    --fg-light: #7ea2b4;
     --tab-fonts: "Roboto Mono";
     --tab-font-size: 11pt;
     --tab-text-align: center;

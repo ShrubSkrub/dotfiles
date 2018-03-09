@@ -6,8 +6,8 @@
 ! xterm*utf8: 2
 XTerm*locale: true
 
-xterm*faceName: Source Code Pro
-xterm*faceSize: 12
+! xterm*faceName: Source Code Pro
+! xterm*faceSize: 12
 
 ! Atelierlakeside (dark) Color Scheme
 ! special

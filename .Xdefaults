@@ -7,7 +7,7 @@ XTerm*termName: xterm-256color
 ! Fonts
 ! xterm*faceName: Source Code Pro | Still nice, but Roboto is condensed, sharper
 xterm*faceName: Roboto Mono
-xterm*faceSize: 12
+xterm*faceSize: 11
 xterm.*.locale: true
 
 ! special

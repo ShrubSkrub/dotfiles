@@ -267,7 +267,8 @@ client.background       #FFFFFF
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
-mode "wallpaper" {
+set $wallpaper "wallpaper: (t|g|s|n|d) [r]"
+mode $wallpaper {
 
     bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'; mode "default"
     bindsym g exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'; mode "default"
@@ -283,17 +284,17 @@ mode "wallpaper" {
     bindsym w mode "default"
 }
 
-bindsym $mod+Shift+w mode "wallpaper"
+bindsym $mod+Shift+w mode $wallpaper
 
-
-mode "launch" {
+set $launch "launch: (f|s|t|c) [w|v|e]"
+mode $launch {
 
     bindsym f exec firefox; mode "default"
     bindsym s exec wireshark; mode "default"
     bindsym t exec xterm; mode "default"
     bindsym c exec code; mode "default"
 
-    bindsym w mode "wallpaper"
+    bindsym w mode $wallpaper
     bindsym v mode $volume
     bindsym e mode "passthrough"
 
@@ -303,8 +304,7 @@ mode "launch" {
     bindsym Tab mode "default"
 }
 
-bindsym $mod+Tab mode "launch"
-
+bindsym $mod+Tab mode $launch
 
 # Special mode to use alt key combinations
 mode "passthrough" {
@@ -330,5 +330,54 @@ mode $volume {
 bindsym $mod+Shift+v mode $volume
 
 # i3 gaps specific config
-gaps inner 10
+gaps inner 5
 # smart_gaps on
+
+set $mode_gaps gaps: (o|i|r)
+set $mode_gaps_outer outer: (+|-|0) 5px global | shift + (+|-|0) 5px local | (8|9) 1px global | (r) reset
+set $mode_gaps_inner inner: (+|-|0) 5px global | shift + (+|-|0) 5px local | (8|9) 1px global | (r) reset
+
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym r      gaps inner all set 5; gaps outer all set 0
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym Shift+plus  gaps inner current plus 5
+        bindsym Shift+minus gaps inner current minus 5
+        bindsym Shift+0     gaps inner current set 0
+
+        bindsym plus  gaps inner all plus 5
+        bindsym minus gaps inner all minus 5
+        bindsym 0     gaps inner all set 0
+
+        bindsym 8     gaps inner all plus 1
+        bindsym 9     gaps inner all minus 1
+
+        bindsym r     gaps inner all set 5
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym Shift+plus  gaps outer current plus 5
+        bindsym Shift+minus gaps outer current minus 5
+        bindsym Shift+0     gaps outer current set 0
+
+        bindsym plus  gaps outer all plus 5
+        bindsym minus gaps outer all minus 5
+        bindsym 0     gaps outer all set 0
+
+        bindsym 8     gaps inner all plus 1
+        bindsym 9     gaps inner all minus 1
+
+        bindsym r     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

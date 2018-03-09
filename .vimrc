@@ -53,8 +53,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
-nmap <Leader>[ :lprev<Enter>
-nmap <Leader>] :lnext<Enter>
+nmap <Leader>n :lprev<Enter>
+nmap <Leader>N :lnext<Enter>
 
 " commentary.vim settings
 " set commenting /* */ to //
@@ -66,9 +66,11 @@ nmap <Leader>f :ClangFormat<Enter>
 " Actual regularish .vimrc stuff
 " type jk quickly for Escape
 imap jk <Esc>
+
 " Visual up and down. This makes multi (visual) lines easier to navigate
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
+
 " Visual autocomplete
 set wildmenu
 " Show last command on the bottom
@@ -129,6 +131,7 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 15
 " F2 to open directory tree
 map <F2> :Lexplore <Enter>
+nmap <Leader>b :Lexplore <Enter>
 
 " Compile c++
 autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
@@ -146,14 +149,16 @@ fun! ToggleCC()
 endfun
 nmap <Leader>l :call ToggleCC()<CR>
 
-func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
-  setlocal spell spelllang=en_us 
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal spell spelllang=en_us
   set complete+=s
-  setlocal wrap 
-  setlocal linebreak 
-endfu 
+  setlocal wrap
+  setlocal linebreak
+    hi CursorLine cterm=NONE
+    hi CursorLineNr cterm=reverse
+endfu
 com! WP call WordProcessorMode()
 
 " Map leader to space
@@ -163,3 +168,6 @@ map <Space> <Leader>
 nmap <Leader>; :w<CR>
 nmap <Leader>z ZZ
 nmap <Leader>q ZQ
+
+" Remove all trailing whitespace
+nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
