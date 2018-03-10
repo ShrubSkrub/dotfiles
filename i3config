@@ -284,17 +284,17 @@ mode $wallpaper {
 
 bindsym $mod+Shift+w mode $wallpaper
 
-set $launch "launch: (f|s|t|c) [w|v|e]"
+set $launch "launch: (f|t|c) [w|v|e|s]"
 mode $launch {
 
     bindsym f exec firefox; mode "default"
-    bindsym s exec wireshark; mode "default"
     bindsym t exec xterm; mode "default"
     bindsym c exec code; mode "default"
 
     bindsym w mode $wallpaper
     bindsym v mode $volume
     bindsym e mode "passthrough"
+    bindsym s mode $screencap
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -303,6 +303,37 @@ mode $launch {
 }
 
 bindsym $mod+Tab mode $launch
+
+# Screenshots!
+set $screencap "screencap: (s|d|w|p) [r]"
+mode $screencap {
+
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'; mode "default"
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'; mode "default"
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'; mode "default"
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'; mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+set $repeatScreencap "R screencap: (s|d|w|p)"
+mode $screencap {
+
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.png' -e 'mv $f ~/screencaps'
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+
+# No direct keybind for this, only mode to LINK to | not used too often
+
 
 # Special mode to use alt key combinations
 mode "passthrough" {
