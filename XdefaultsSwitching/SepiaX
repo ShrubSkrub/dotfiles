@@ -1,0 +1,40 @@
+! xterm*Background: black
+! xterm*Foreground: white
+! xterm*cursorColor: red
+
+XTerm*termName: xterm-256color
+
+! Fonts
+! xterm*faceName: Source Code Pro | Still nice, but Roboto is condensed, sharper
+xterm*faceName: Roboto Mono
+xterm*faceSize: 11
+xterm.*.locale: true
+
+!!!! dkeg - canvasedpastel !!!!
+
+*background:       #170F0D
+*foreground:       #746C48
+
+*color0: #26251C
+*color1: #323027
+*color2: #3D4339
+*color3: #443B2C
+*color4: #534D35
+*color5: #646756
+*color6: #7B8574
+*color7: #837B61
+*color8: #999F91
+*color9: #9B9773
+*color10: #B2B08C
+*color11: #C4BB8C
+*color12: #C4B67A
+*color13: #CFC995
+*color14: #D3D4B6
+*color15: #D6D3AC
+
+! Copy to clipboard
+xterm.*.selectToClipboard: true
+
+! Cursors
+Xcursor.theme: Breeze-Adapta
+! Xcursor.size: 1

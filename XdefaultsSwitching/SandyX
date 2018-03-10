@@ -1,0 +1,46 @@
+! xterm*Background: black
+! xterm*Foreground: white
+! xterm*cursorColor: red
+
+XTerm*termName: xterm-256color
+
+! Fonts
+! xterm*faceName: Source Code Pro | Still nice, but Roboto is condensed, sharper
+xterm*faceName: Roboto Mono
+xterm*faceSize: 11
+xterm.*.locale: true
+
+! Colors
+xterm*foreground:   #ffffff
+xterm*background:   #1b1d1e
+! black
+xterm*color0:       #262626
+xterm*color8:       #636363
+! red
+xterm*color1:       #d7005f
+xterm*color9:       #d7005f
+! green
+xterm*color2:       #87ff00
+xterm*color10:      #87ff00
+! yellow
+xterm*color3:       #ff8700
+xterm*color11:      #ff8700
+! blue
+xterm*color4:       #acac85
+xterm*color12:      #acac85
+! magenta
+xterm*color5:       #af5fff
+xterm*color13:      #af5fff
+! cyan
+xterm*color6:       #5fd7ff
+xterm*color14:      #5fd7ff
+! white
+xterm*color7:       #444444
+xterm*color15: #8a8a8a
+
+! Copy to clipboard
+xterm.*.selectToClipboard: true
+
+! Cursors
+Xcursor.theme: Breeze-Adapta
+! Xcursor.size: 1

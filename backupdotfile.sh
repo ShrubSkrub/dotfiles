@@ -12,23 +12,27 @@ else
     cp /home/shrub/.vimrc /home/shrub/dotfiles/.vimrc
 fi
 
-# Copy .Xresources
-cmp /home/shrub/.Xresources /home/shrub/dotfiles/.Xresources
-if [ $? -eq 0 ];then
-    echo "No change to .Xresources"
-else
-    echo "Backing up .Xresources..."
-    cp /home/shrub/.Xresources /home/shrub/dotfiles/.Xresources
-fi
-
-# Copy .Xdefaults
-cmp /home/shrub/.Xdefaults /home/shrub/dotfiles/.Xdefaults
-if [ $? -eq 0 ];then
-    echo "No change to .Xdefaults"
-else
-    echo "Backing up .Xdefaults..."
-    cp /home/shrub/.Xdefaults /home/shrub/dotfiles/.Xdefaults
-fi
+### Deprecated ###
+# # Copy .Xresources
+# cmp /home/shrub/.Xresources /home/shrub/dotfiles/.Xresources
+# if [ $? -eq 0 ];then
+#     echo "No change to .Xresources"
+# else
+#     echo "Backing up .Xresources..."
+#     cp /home/shrub/.Xresources /home/shrub/dotfiles/.Xresources
+# fi
+#
+#
+# # Copy .Xdefaults
+# cmp /home/shrub/.Xdefaults /home/shrub/dotfiles/.Xdefaults
+# if [ $? -eq 0 ];then
+#     echo "No change to .Xdefaults"
+# else
+#     echo "Backing up .Xdefaults..."
+#     cp /home/shrub/.Xdefaults /home/shrub/dotfiles/.Xdefaults
+# fi
+#
+# No more need with new switching style built in i3
 
 # Copy .Xmodmap
 cmp /home/shrub/.Xmodmap /home/shrub/dotfiles/.Xmodmap
