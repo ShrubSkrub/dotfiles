@@ -28,23 +28,26 @@ else
     cp /home/shrub/dotfiles/.vimrc /home/shrub/.vimrc
 fi
 
-# Copy .Xresources
-cmp /home/shrub/dotfiles/.Xresources /home/shrub/.Xresources
-if [ $? -eq 0 ];then
-    echo "No change to .Xresources"
-else
-    echo "Pulling .Xresources..."
-    cp /home/shrub/dotfiles/.Xresources /home/shrub/.Xresources
-fi
-
-# Copy .Xdefaults
-cmp /home/shrub/dotfiles/.Xdefaults /home/shrub/.Xdefaults
-if [ $? -eq 0 ];then
-    echo "No change to .Xdefaults"
-else
-    echo "Pulling .Xdefaults..."
-    cmp /home/shrub/dotfiles/.Xdefaults /home/shrub/.Xdefaults
-fi
+# # Copy .Xresources
+# cmp /home/shrub/dotfiles/.Xresources /home/shrub/.Xresources
+# if [ $? -eq 0 ];then
+#     echo "No change to .Xresources"
+# else
+#     echo "Pulling .Xresources..."
+#     cp /home/shrub/dotfiles/.Xresources /home/shrub/.Xresources
+# fi
+# Deprecated
+# 
+# # Copy .Xdefaults
+# cmp /home/shrub/dotfiles/.Xdefaults /home/shrub/.Xdefaults
+# if [ $? -eq 0 ];then
+#     echo "No change to .Xdefaults"
+# else
+#     echo "Pulling .Xdefaults..."
+#     cmp /home/shrub/dotfiles/.Xdefaults /home/shrub/.Xdefaults
+# fi
+#
+# Deprecated
 
 # Copy .Xmodmap
 cmp /home/shrub/dotfiles/.Xmodmap /home/shrub/.Xmodmap
