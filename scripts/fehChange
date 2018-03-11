@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Save current directory
+pushd .
+
+# Move to wallpaper directory for autocomplete
+cd $HOME/dotfiles/wallpapers/
+
+# Show options
+ls
+
+# Choose!
+echo "Choose a wallpaper: "
+read -e -p "> " WALL
+
+
+# Change wallpaper
+feh --bg-fill "$WALL"
+
+# Return to original directory
+popd
