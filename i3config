@@ -265,7 +265,7 @@ client.background       #FFFFFF
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
-set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m) [r]"
+set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m) [r|c]"
 mode $wallpaper {
 
     bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'; mode "default"
@@ -279,11 +279,16 @@ mode $wallpaper {
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 
+    bindsym c exec xterm -T wch -e "$HOME/dotfiles/scripts/fehChange"; mode "default"
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym w mode "default"
 }
+
+for_window [instance="xterm" title="wch"] floating enable;
+for_window [instance="xterm" title="wch"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
 
 bindsym $mod+Shift+w mode $wallpaper
 
