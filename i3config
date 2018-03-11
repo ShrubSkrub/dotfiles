@@ -265,7 +265,7 @@ client.background       #FFFFFF
 # Skinned dmenu!
 bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
-set $wallpaper "wallpaper: (t|g|s|n|d|v) [r]"
+set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m) [r]"
 mode $wallpaper {
 
     bindsym t exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'; mode "default"
@@ -274,6 +274,8 @@ mode $wallpaper {
     bindsym n exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'; mode "default"
     bindsym d exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/dblue.jpg'; mode "default"
     bindsym v exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/vaporwave.jpg'; mode "default"
+    bindsym a exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/arizonafalls.jpg'; mode "default"
+    bindsym m exec --no-startup-id feh --bg-fill '/home/shrub/dotfiles/wallpapers/mountainsV.png'; mode "default"
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
 

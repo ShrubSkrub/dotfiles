@@ -2,7 +2,7 @@
 # Bash Menu Script Example
 
 PS3='Change to #: '
-options=("Random" "foxwall" "grassfox" "snowfox" "newMeridian" "dblue" "vaporwave" "vgrassfox" "Quit")
+options=("Random" "foxwall" "grassfox" "snowfox" "newMeridian" "dblue" "vaporwave" "vgrassfox" "arizonafalls" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -36,6 +36,14 @@ do
             ;;
         "vgrassfox")
             feh --bg-fill '/home/shrub/dotfiles/wallpapers/vgrassfox.jpg'
+            break
+            ;;
+        "arizonafalls")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/arizonafalls.jpg'
+            break
+            ;;
+        "mountainsV")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/mountainsV.png'
             break
             ;;
         "Quit")
