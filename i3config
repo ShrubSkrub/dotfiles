@@ -365,7 +365,7 @@ mode "passthrough" {
 
 bindsym $mod+Escape mode "passthrough"
 
-set $volume "Volume: [u]p  [d]own  [m]ute"
+set $volume "volume: [u]p  [d]own  [m]ute"
 mode $volume {
 
     bindsym u exec volume up
