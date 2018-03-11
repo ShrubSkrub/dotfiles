@@ -1,0 +1,46 @@
+#!/bin/bash
+# Bash Menu Script Example
+
+PS3='Change to #: '
+options=("Random" "foxwall" "grassfox" "snowfox" "newMeridian" "dblue" "vaporwave" "vgrassfox" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Random")
+            feh --randomize --bg-fill /home/shrub/dotfiles/wallpapers/*
+            break
+            ;;
+        "foxwall")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/foxwall.jpg'
+            break
+            ;;
+        "grassfox")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/grassfox.jpg'
+            break
+            ;;
+        "snowfox")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/snowfox.jpg'
+            break
+            ;;
+        "newMeridian")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/newMeridian.jpg'
+            break
+            ;;
+        "dblue")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/dblue.jpg'
+            break
+            ;;
+        "vaporwave")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/vaporwave.jpg'
+            break
+            ;;
+        "vgrassfox")
+            feh --bg-fill '/home/shrub/dotfiles/wallpapers/vgrassfox.jpg'
+            break
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done
