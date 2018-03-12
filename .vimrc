@@ -139,6 +139,13 @@ autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
 " Run c++
 autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
 
+
+" Compile python
+" autocmd filetype py nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
+
+" Run python
+autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
+
 " Show 80 chars with \l
 fun! ToggleCC()
     if &cc == ''
