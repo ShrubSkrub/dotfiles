@@ -288,7 +288,7 @@ mode $wallpaper {
 }
 
 for_window [instance="xterm" title="wch"] floating enable;
-for_window [instance="xterm" title="wch"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
+for_window [instance="xterm" title="wch"] resize grow left 40, resize grow right 40, resize grow down 30, resize grow up 30;
 
 bindsym $mod+Shift+w mode $wallpaper
 
