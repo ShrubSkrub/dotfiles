@@ -178,3 +178,6 @@ nmap <Leader>q ZQ
 
 " Remove all trailing whitespace
 nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" Toggle character wrap quickly
+nmap <Leader>W :set wrap!<CR>
