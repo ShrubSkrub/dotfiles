@@ -268,15 +268,15 @@ bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#E
 set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m|p) [r|c]"
 mode $wallpaper {
 
-    bindsym t exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/foxwall.jpg'; mode "default"
-    bindsym g exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/grassfox.jpg'; mode "default"
-    bindsym s exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/snowfox.jpg'; mode "default"
-    bindsym n exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/newMeridian.jpg'; mode "default"
-    bindsym d exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/dblue.jpg'; mode "default"
-    bindsym v exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/vaporwave.jpg'; mode "default"
-    bindsym a exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/arizonafalls.jpg'; mode "default"
-    bindsym m exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/mountainsV.png'; mode "default"
-    bindsym p exec --no-startup-id feh --bg-fill '$HOME/dotfiles/wallpapers/vpalms.jpg'; mode "default"
+    bindsym t exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/foxwall.jpg"; mode "default"
+    bindsym g exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/grassfox.jpg"; mode "default"
+    bindsym s exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/snowfox.jpg"; mode "default"
+    bindsym n exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/newMeridian.jpg"; mode "default"
+    bindsym d exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/dblue.jpg"; mode "default"
+    bindsym v exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/vaporwave.jpg"; mode "default"
+    bindsym a exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/arizonafalls.jpg"; mode "default"
+    bindsym m exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/mountainsV.png"; mode "default"
+    bindsym p exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/vpalms.jpg"; mode "default"
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
 
@@ -338,10 +338,10 @@ bindsym $mod+Shift+x mode $xswitch
 set $screencap "screencap: (s|d|w|p) [r]"
 mode $screencap {
 
-    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'; mode "default"
-    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'; mode "default"
-    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'; mode "default"
-    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'; mode "default"
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -351,10 +351,10 @@ mode $screencap {
 set $repeatScreencap "R screencap: (s|d|w|p)"
 mode $screencap {
 
-    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'
-    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'
-    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'
-    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e 'mv $f $HOME/screencaps'
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
