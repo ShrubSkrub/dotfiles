@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Save current directory
+pushd .
+
+# Move to themes directory for autocomplete
+cd $HOME/dotfiles/XdefaultsSwitching/
+
+# Show options
+ls
+
+# Choose!
+echo "Choose a wallpaper: "
+read -e -p "> " THEME
+
+
+# Change wallpaper
+cp $THEME $HOME/.Xdefaults
+
+# Return to original directory
+popd

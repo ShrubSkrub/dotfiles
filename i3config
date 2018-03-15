@@ -316,7 +316,7 @@ mode $launch {
 bindsym $mod+Tab mode $launch
 
 # Xdefaults switching!
-set $xswitch "xtheme: (n|c|m|s|t)"
+set $xswitch "xtheme: (n|c|m|s|t) [C]"
 mode $xswitch {
 
     bindsym n exec cp $HOME/dotfiles/XdefaultsSwitching/NormalX $HOME/.Xdefaults; mode "default"
@@ -324,6 +324,8 @@ mode $xswitch {
     bindsym m exec cp $HOME/dotfiles/XdefaultsSwitching/MatrixX $HOME/.Xdefaults; mode "default"
     bindsym s exec cp $HOME/dotfiles/XdefaultsSwitching/SandyX $HOME/.Xdefaults; mode "default"
     bindsym t exec cp $HOME/dotfiles/XdefaultsSwitching/TestX $HOME/.Xdefaults; mode "default"
+
+    bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
