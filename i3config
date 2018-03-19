@@ -91,7 +91,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -194,6 +194,10 @@ bindsym $mod+i bar mode toggle
 # Chromebook style delete key | NOT WORKING ATM
 # bind sym $mod+BackSpace exec xdotool key Delete
 
+# Quick side to side switching
+bindsym $mod+a workspace next
+bindsym $mod+d workspace prev
+
 # Setup xmodmap
 # Buggy, but seems to work after two tries, so whatever
 exec xmodmap $HOME/.Xmodmap
@@ -263,7 +267,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 # Skinned dmenu!
-bindsym $mod+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
+bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
 
 set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m|p) [r|c]"
 mode $wallpaper {
