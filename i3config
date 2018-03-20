@@ -23,9 +23,7 @@ font pango:Roboto Mono Medium 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
+# The font above is very space-efficient, that is, it looks good, sharp and # clear in small sizes. However, its unicode glyph coverage is limited, the old # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -248,7 +246,7 @@ bindsym $mod+F10 exec volume up
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
 # WINDOW CUSOMIZATIONS
-new_window pixel 2
+new_window pixel 0
 new_float normal
 hide_edge_borders both
 
@@ -320,7 +318,7 @@ mode $launch {
 bindsym $mod+Tab mode $launch
 
 # Xdefaults switching!
-set $xswitch "xtheme: (n|c|m|s|l|t) [C]"
+set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
 mode $xswitch {
 
     bindsym n exec cp $HOME/dotfiles/XdefaultsSwitching/NormalX $HOME/.Xdefaults; mode "default"
@@ -328,6 +326,7 @@ mode $xswitch {
     bindsym m exec cp $HOME/dotfiles/XdefaultsSwitching/MatrixX $HOME/.Xdefaults; mode "default"
     bindsym s exec cp $HOME/dotfiles/XdefaultsSwitching/SandyX $HOME/.Xdefaults; mode "default"
     bindsym l exec cp $HOME/dotfiles/XdefaultsSwitching/LightSolarizedX $HOME/.Xdefaults; mode "default"
+    bindsym d exec cp $HOME/dotfiles/XdefaultsSwitching/DarkCyberX $HOME/.Xdefaults; mode "default"
     bindsym t exec cp $HOME/dotfiles/XdefaultsSwitching/TestX $HOME/.Xdefaults; mode "default"
 
     bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
@@ -398,7 +397,7 @@ mode $volume {
 bindsym $mod+Shift+v mode $volume
 
 # i3 gaps specific config
-gaps inner 5
+gaps inner 15
 # smart_gaps on
 
 set $mode_gaps gaps: (o|i|r)
@@ -410,7 +409,7 @@ bindsym $mod+Shift+g mode "$mode_gaps"
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
         bindsym i      mode "$mode_gaps_inner"
-        bindsym r      gaps inner all set 5; gaps outer all set 0
+        bindsym r      gaps inner all set 20; gaps outer all set 0
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -427,7 +426,7 @@ mode "$mode_gaps_inner" {
         bindsym 8     gaps inner all plus 1
         bindsym 9     gaps inner all minus 1
 
-        bindsym r     gaps inner all set 5
+        bindsym r     gaps inner all set 20
 
         bindsym o     mode $mode_gaps_outer
 
