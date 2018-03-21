@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Sending output to monitor..."
+xrandr --auto --output HDMI1 --mode 1920x1080 --right-of eDP1
+
+echo "Turning off built in display..."
+xrandr --output eDP1 --off
+
+echo "Setting a random wallpaper..."
+feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
+
+echo "Finished"
