@@ -17,35 +17,35 @@ xterm.*.locale: true
 
 ! black
 *.color0:       #0C0E17
-*.color8:       #0C0E17
+*.color8:       #272D4A
 
 ! red
 *.color1:       #C41A63
-*.color9:       #C41A63
+*.color9:       #F7217D
 
 ! green
 *.color2:       #484F59
-*.color10:      #484F59
+*.color10:      #717C8C
 
 ! yellow
 *.color3:       #689EB4
-*.color11:      #689EB4
+*.color11:      #86CCE8
 
 ! blue
 *.color4:       #616A73
-*.color12:      #616A73
+*.color12:      #8C99A6
 
 ! magenta
 *.color5:       #0F8182
-*.color13:      #0F8182
+*.color13:      #15B4B5
 
 ! cyan
 *.color6:       #49B5B5
-*.color14:      #49B5B5
+*.color14:      #5EE8E8
 
 ! white
 *.color7:       #A9AEB4
-*.color15:      #A9AEB4
+*.color15:      #DAE0E8
 
 ! Copy to clipboard
 xterm.*.selectToClipboard: true
