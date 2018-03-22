@@ -193,8 +193,8 @@ bindsym $mod+i bar mode toggle
 # bind sym $mod+BackSpace exec xdotool key Delete
 
 # Quick side to side switching
-bindsym $mod+a workspace next
-bindsym $mod+d workspace prev
+bindsym $mod+a workspace prev
+bindsym $mod+d workspace next
 
 # Setup xmodmap
 # Buggy, but seems to work after two tries, so whatever
