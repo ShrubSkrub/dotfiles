@@ -1,0 +1,48 @@
+# Copy to clipboard
+set selection-clipboard clipboard
+
+# Enable incremental search
+set incremental-search true
+
+# Font!
+set font "Roboto Mono Medium 10"
+
+# Don't go to greyscale when inverted
+# set recolor-keephue
+
+# Center horizontally when zooming
+set zoom-center true
+
+# Vertical scrollbar
+set show-v-scrollbar true
+
+# colors
+set default-bg                  "#080a11"
+set default-fg                  "#a9aeb4"
+
+set statusbar-fg                "#a9aeb4"
+set statusbar-bg                "#0c0e17"
+
+set inputbar-bg                 "#0c0e17"
+set inputbar-fg                 "#a9aeb4"
+
+set notification-error-bg       "#49b5b5"
+set notification-error-fg       "#a9aeb4"
+
+set notification-warning-bg     "#484f59"
+set notification-warning-fg     "#a9aeb4"
+
+set highlight-color             "#3d4550"
+set highlight-active-color      "#a9aeb4"
+
+set completion-highlight-fg     "#dedee0"
+set completion-highlight-bg     "#0f8182"
+
+set completion-bg               "#080a11"
+set completion-fg               "#a9aeb4"
+
+set notification-bg             "#689eb4"
+set notification-fg             "#dedee0"
+
+set recolor-lightcolor          "#080a11"
+set recolor-darkcolor           "#a9aeb4"
