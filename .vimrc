@@ -9,6 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
 " Goyo Vim | :Goyo for writing | Don't really need, turn on when needed
 " Plugin 'junegunn/goyo.vim'
 
@@ -23,6 +24,10 @@ Plugin 'airblade/vim-gitgutter'
 
 " Format c++, java, js with :ClangFormat
 Plugin 'rhysd/vim-clang-format'
+
+" Statusline!
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Autoclose " ( { | too laggy
 " Plugin 'Townk/vim-autoclose'
@@ -44,6 +49,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" Statusline Settings
+set laststatus=2
+set noshowmode
+
+let g:airline_theme='badcat'
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -93,8 +104,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Show whitespace characters
 set list
-set listchars=tab:>-,trail:$,extends:>,precedes:<,nbsp:%
+set listchars=tab:>-,trail:¬,extends:»,precedes:«,nbsp:§
 
 " Quick :w
 nnoremap ;; :w<CR>
