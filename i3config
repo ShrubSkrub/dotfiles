@@ -302,6 +302,9 @@ mode $launch {
     bindsym t exec xterm; mode "default"
     bindsym c exec code; mode "default"
 
+    # Open Fez terminal | idk why, its more of a joke really...
+    bindsym shift+t exec xterm -fa MonoFez; mode "default"
+
     bindsym w mode $wallpaper
     bindsym v mode $volume
     bindsym e mode "passthrough"

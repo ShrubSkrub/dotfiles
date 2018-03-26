@@ -91,6 +91,7 @@ set wildmenu
 set showcmd
 " Show line numbers
 set number
+set relativenumber
 " Highlight syntax
 syntax on
 " Enable mouse support
