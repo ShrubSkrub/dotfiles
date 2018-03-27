@@ -1,55 +1,61 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+" START VUNDLE
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" PLUGINS """""""""""""""""""""""""""""
 
-" Goyo Vim | :Goyo for writing | Don't really need, turn on when needed
-" Plugin 'junegunn/goyo.vim'
-
-" Gcc Commentor
 Plugin 'tpope/vim-commentary'
-
-" Syntastic for Code Checking
 Plugin 'vim-syntastic/syntastic'
-
-" Gitgutter for version control
 Plugin 'airblade/vim-gitgutter'
-
-" Format c++, java, js with :ClangFormat
 Plugin 'rhysd/vim-clang-format'
 
 " Statusline!
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Autoclose " ( { | too laggy
-" Plugin 'Townk/vim-autoclose'
+" Change surrounding chars
+Plugin 'tpope/vim-surround'
+" Easy motion
+Plugin 'easymotion/vim-easymotion'
 
-" An autoclose that works? | Lol nope flashes screen a lot
-" Plugin 'jiangmiao/auto-pairs'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+" END PLUGINS """""""""""""""""""""""""
+call vundle#end()
+filetype plugin indent on
 " Put your non-Plugin stuff after this line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" REMAPPINGS """"""""""""""""""""""""""
 
+" type jk quickly for Escape
+imap jk <Esc>
+" Quick :w
+nnoremap ;; :w<CR>
+" Map leader to space
+map <Space> <Leader>
+" leader write
+nmap <Leader>; :w<CR>
+nmap <Leader>z ZZ
+nmap <Leader>q ZQ
+" Remove all trailing whitespace
+nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" Toggle character wrap quickly
+nmap <Leader>W :set wrap!<CR>
+" Show 80 chars with \l
+fun! ToggleCC()
+    if &cc == ''
+        set cc=80
+    else
+        set cc=
+    endif
+endfun
+nmap <Leader>l :call ToggleCC()<CR>
+" For syntastic
+nmap <Leader>n :lprev<Enter>
+nmap <Leader>N :lnext<Enter>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN SETTINGS """""""""""""""""""""
 " Statusline Settings
 set laststatus=2
 set noshowmode
@@ -67,9 +73,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
-nmap <Leader>n :lprev<Enter>
-nmap <Leader>N :lnext<Enter>
-
 " commentary.vim settings
 " set commenting /* */ to //
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
@@ -77,13 +80,22 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 " clang format settings
 nmap <Leader>f :ClangFormat<Enter>
 
-" Actual regularish .vimrc stuff
-" type jk quickly for Escape
-imap jk <Esc>
+" Easy motion
+map <Space><Space> <Plug>(easymotion-prefix)
+" <leader>f{char} to move to {char}
+map  <Space><Space>f <Plug>(easymotion-bd-f)
+nmap <Space><Space>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+nmap <Space><Space>s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <Space><Space>L <Plug>(easymotion-bd-jk)
+nmap <Space><Space>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Space><Space>w <Plug>(easymotion-bd-w)
+nmap <Space><Space>w <Plug>(easymotion-overwin-w)
 
-" Visual up and down. This makes multi (visual) lines easier to navigate
-" nnoremap j gj
-" nnoremap k gk
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Actual regularish .vimrc stuff
 
 " Visual autocomplete
 set wildmenu
@@ -109,24 +121,16 @@ set expandtab
 set list
 set listchars=tab:>-,trail:¬,extends:»,precedes:«,nbsp:§
 
-" Quick :w
-nnoremap ;; :w<CR>
 " Search instant go
 set is
 " Highlight stuff
 set t_Co=256
 " colorscheme fresh
 
+" Highlighting
 set cursorline
 hi CursorLine cterm=reverse
 hi CursorLineNr cterm=reverse
-
-" Spaces higlight
-" set listchars=space:.
-" highlight WhiteSpaceBol ctermfg=blue
-" highlight WhiteSpaceMol ctermfg=white
-" match WhiteSpaceMol / /
-" match WhiteSpaceBol /^ \+/
 
 " Cursor stuff
 if &term =~ "xterm\\|rxvt"
@@ -151,22 +155,10 @@ nmap <Leader>b :Lexplore <Enter>
 
 " Compile c++
 autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
-
 " Run c++
 autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
-
 " Run python
 autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
-
-" Show 80 chars with \l
-fun! ToggleCC()
-    if &cc == ''
-        set cc=80
-    else
-        set cc=
-    endif
-endfun
-nmap <Leader>l :call ToggleCC()<CR>
 
 func! WordProcessorMode()
   setlocal formatoptions=1
@@ -180,16 +172,3 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
-" Map leader to space
-map <Space> <Leader>
-
-" leader write
-nmap <Leader>; :w<CR>
-nmap <Leader>z ZZ
-nmap <Leader>q ZQ
-
-" Remove all trailing whitespace
-nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
-" Toggle character wrap quickly
-nmap <Leader>W :set wrap!<CR>
