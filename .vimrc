@@ -6,7 +6,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "--- START PLUGINS ----------"
 """" Core \/
+Plugin 'raimondi/delimitmate'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'rhysd/vim-clang-format'
@@ -22,8 +24,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 
 """" Testing \/
-Plugin 'raimondi/delimitmate'
-Plugin 'tpope/vim-fugitive'
+Plugin 'exvim/ex-autocomplpop'
+Plugin 'ervandew/supertab'
 
 "--- END PLUGINS ------------"
 call vundle#end()
@@ -99,6 +101,9 @@ nmap <Space><Space>L <Plug>(easymotion-overwin-line)
 " Move to word
 map  <Space><Space>w <Plug>(easymotion-bd-w)
 nmap <Space><Space>w <Plug>(easymotion-overwin-w)
+
+" Supertab/ex-autocomplete
+let g:SuperTabDefaultCompletionType = '<c-n>'
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "------- REGULAR .VIMRC STUFF ---------"
