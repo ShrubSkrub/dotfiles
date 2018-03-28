@@ -1,31 +1,36 @@
-" START VUNDLE
+"--- VUNDLE ---------------------------"
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" PLUGINS """""""""""""""""""""""""""""
-
-Plugin 'tpope/vim-commentary'
-Plugin 'vim-syntastic/syntastic'
+"--- START PLUGINS ----------"
+"""" Core \/
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-commentary'
 Plugin 'rhysd/vim-clang-format'
 
-" Statusline!
+"""" Statusline! \/
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+"""" Will remove if lag \/
 " Change surrounding chars
 Plugin 'tpope/vim-surround'
 " Easy motion
 Plugin 'easymotion/vim-easymotion'
 
-" END PLUGINS """""""""""""""""""""""""
+"""" Testing \/
+Plugin 'raimondi/delimitmate'
+Plugin 'tpope/vim-fugitive'
+
+"--- END PLUGINS ------------"
 call vundle#end()
 filetype plugin indent on
-" Put your non-Plugin stuff after this line
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" REMAPPINGS """"""""""""""""""""""""""
+" non-Plugin stuff after this line
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"------- REMAPPINGS -------------------"
 
 " type jk quickly for Escape
 imap jk <Esc>
@@ -50,37 +55,38 @@ fun! ToggleCC()
     endif
 endfun
 nmap <Leader>l :call ToggleCC()<CR>
+" Quick column show
+nmap <Leader>L :set cursorcolumn!<CR>
 " For syntastic
 nmap <Leader>n :lprev<Enter>
 nmap <Leader>N :lnext<Enter>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGIN SETTINGS """""""""""""""""""""
-" Statusline Settings
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"------- PLUGIN SETTINGS --------------"
+
+"""" Statusline Settings
 set laststatus=2
 set noshowmode
-
 let g:airline_theme='badcat'
 
-" Syntastic settings
+"""" Syntastic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
 
-" commentary.vim settings
+"""" Commentary.vim Settings
 " set commenting /* */ to //
 autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 
-" clang format settings
+"""" Clang Format Settings
 nmap <Leader>f :ClangFormat<Enter>
 
-" Easy motion
+"""" Easy Motion Keybindings
 map <Space><Space> <Plug>(easymotion-prefix)
 " <leader>f{char} to move to {char}
 map  <Space><Space>f <Plug>(easymotion-bd-f)
@@ -94,9 +100,9 @@ nmap <Space><Space>L <Plug>(easymotion-overwin-line)
 map  <Space><Space>w <Plug>(easymotion-bd-w)
 nmap <Space><Space>w <Plug>(easymotion-overwin-w)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Actual regularish .vimrc stuff
-
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+"------- REGULAR .VIMRC STUFF ---------"
+"--- CORE -------------------"
 " Visual autocomplete
 set wildmenu
 " Show last command on the bottom
@@ -108,29 +114,26 @@ set relativenumber
 syntax on
 " Enable mouse support
 set mouse=a
-
 " Clipboard!
 set clipboard=unnamedplus
-
+" Search instant go
+set is
 " Tab = 4 spaces | set expandtab to get spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"--- VISUAL/HIGHLIGHT ------"
 " Show whitespace characters
 set list
 set listchars=tab:>-,trail:¬,extends:»,precedes:«,nbsp:§
 
-" Search instant go
-set is
-" Highlight stuff
-set t_Co=256
-" colorscheme fresh
-
 " Highlighting
+set t_Co=256
 set cursorline
 hi CursorLine cterm=reverse
 hi CursorLineNr cterm=reverse
+hi CursorColumn cterm=reverse
 
 " Cursor stuff
 if &term =~ "xterm\\|rxvt"
@@ -143,6 +146,7 @@ if &term =~ "xterm\\|rxvt"
   autocmd VimLeave * silent !echo -ne "\033]112\007"
 endif
 
+"--- FUNCTIONS -------------"
 " Directory/File Browser
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -153,13 +157,7 @@ let g:netrw_winsize = 15
 map <F2> :Lexplore <Enter>
 nmap <Leader>b :Lexplore <Enter>
 
-" Compile c++
-autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
-" Run c++
-autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
-" Run python
-autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
-
+" Word Processor Mode!
 func! WordProcessorMode()
   setlocal formatoptions=1
   setlocal noexpandtab
@@ -172,3 +170,9 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
+" Compile c++
+autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
+" Run c++
+autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
+" Run python
+autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
