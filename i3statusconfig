@@ -31,8 +31,8 @@ ethernet eth0 {
 }
 
 ipv6 {
-	format_up = "%ip"
-	format_down = ""
+    format_up = "%ip"
+    format_down = ""
 }
 
 battery 0 {
@@ -47,19 +47,19 @@ battery 0 {
 
 run_watch DHCP {
         pidfile = "/var/run/dhclient*.pid"
-	format_down=""
+    format_down=""
 }
 
 run_watch VPNC {
         # file containing the PID of a vpnc process
         pidfile = "/var/run/vpnc/pid"
-	format_down=""
+    format_down=""
 }
 
 path_exists VPN {
         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
         path = " /proc/sys/net/ipv4/conf/tun0 "
-	format_down=" VPN "
+    format_down=" VPN "
 }
 
 tztime local {
@@ -71,7 +71,7 @@ load {
 }
 
 cpu_usage {
-	format = " %usage "
+    format = " %usage "
 }
 
 # cpu_temperature 0 {
