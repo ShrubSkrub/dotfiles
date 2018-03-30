@@ -103,24 +103,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-#------- STARTUP ----------------------#
-# Set background
-exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
-
-# Setup xmodmap
-exec xmodmap $HOME/.Xmodmap
-exec xmodmap $HOME/.Xmodmap
-# Buggy, but seems to work after two tries, so whatever
-
-# Lock when afk | I can't tell if this is working or not...
-exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
-
-# Start compton
-# Stupid thing leaves me with blank screen, need to fix
-# exec --no-startup-id compton -b
-
-exec --no-startup-id xterm
-
 #------- WINDOW CUSOMIZATIONS ---------#
 font pango:Roboto Mono Medium 10
 new_window pixel 0
@@ -284,7 +266,6 @@ bar {
 }
 bindsym $mod+i bar mode toggle
 
-
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #------- i3 GAPS SPECIFIC -------------#
 gaps inner 15
@@ -340,3 +321,23 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#------- STARTUP ----------------------#
+# Set background
+exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
+
+# Setup xmodmap
+exec xmodmap $HOME/.Xmodmap
+exec xmodmap $HOME/.Xmodmap
+# Buggy, but seems to work after two tries, so whatever
+
+# Lock when afk | I can't tell if this is working or not...
+exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
+
+# Start compton
+# Stupid thing leaves me with blank screen, need to fix
+# exec --no-startup-id compton -b
+
+exec --no-startup-id xterm
+
