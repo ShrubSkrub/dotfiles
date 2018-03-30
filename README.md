@@ -12,5 +12,6 @@ Just a repository for my dotfiles...
 * Image Viewer/Wallpapers: Feh
 * Screenshots: Scrot
 * PDF Viewer: Zathura
+* Lockscreen: ![i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 
 Remember that .Xdefaults is used *instead of* .Xresources...
