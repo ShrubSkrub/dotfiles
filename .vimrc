@@ -123,6 +123,9 @@ set mouse=a
 set clipboard=unnamedplus
 " Search instant go
 set is
+" Better search case-handling
+set ignorecase
+set smartcase
 " Tab = 4 spaces | set expandtab to get spaces
 set tabstop=4
 set shiftwidth=4
