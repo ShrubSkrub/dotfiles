@@ -99,10 +99,12 @@ nmap <Space><Space>s <Plug>(easymotion-overwin-f2)
 map <Space><Space>L <Plug>(easymotion-bd-jk)
 nmap <Space><Space>L <Plug>(easymotion-overwin-line)
 " Move to word
-map  <Space><Space>w <Plug>(easymotion-bd-w)
-nmap <Space><Space>w <Plug>(easymotion-overwin-w)
+" map  <Space><Space>w <Plug>(easymotion-bd-w)
+" nmap <Space><Space>w <Plug>(easymotion-overwin-w)
+map  <Space>w <Plug>(easymotion-bd-w)
+nmap <Space>w <Plug>(easymotion-overwin-w)
 
-" Supertab/ex-autocomplete
+"""" Supertab/ex-autocomplete
 let g:SuperTabDefaultCompletionType = '<c-n>'
 
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
