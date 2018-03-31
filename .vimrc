@@ -127,6 +127,8 @@ set is
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" Faster drawing
+set ttyfast
 
 "--- VISUAL/HIGHLIGHT ------"
 " Show whitespace characters
