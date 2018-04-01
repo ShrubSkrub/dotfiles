@@ -1,0 +1,24 @@
+#!/bin/sh
+# Use this script to set theme in any terminal that supports escape sequences
+if [ "$TERM" = "linux" ]; then
+  /bin/echo -e "
+  \e]P0191d30
+  \e]P1c41a63
+  \e]P2484f59
+  \e]P3689eb4
+  \e]P4616a73
+  \e]P50f8182
+  \e]P649b5b5
+  \e]P7a9aeb4
+  \e]P8191d30
+  \e]P9c41a63
+  \e]PA484f59
+  \e]PB689eb4
+  \e]PC616a73
+  \e]PD0f8182
+  \e]PE49b5b5
+  \e]PFa9aeb4
+  "
+  # get rid of artifacts
+  clear
+fi
