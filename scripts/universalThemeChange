@@ -1,5 +1,5 @@
 #!/bin/sh
-# Use this script to set theme in any terminal that supports escape sequences
+# Use this script to set theme in tty
 if [ "$TERM" = "linux" ]; then
   /bin/echo -e "
   \e]P0191d30
