@@ -6,7 +6,7 @@ Just a repository for my dotfiles...
 ### Ingredients:
 * WM: i3-gaps (w/compton)
 * Terminal: Xterm
-* Editor: Vim (w/Vundle)
+* Editor: Vim (w/![Vundle](https://github.com/VundleVim/Vundle.vim))
 * Browser: Firefox (w/Vimium)
 * File Browser: Ranger
 * Image Viewer/Wallpapers: Feh
