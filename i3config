@@ -176,7 +176,7 @@ mode $xswitch {
     bindsym m exec cp $HOME/dotfiles/XdefaultsSwitching/MatrixX $HOME/.Xdefaults; mode "default"
     bindsym s exec cp $HOME/dotfiles/XdefaultsSwitching/SandyX $HOME/.Xdefaults; mode "default"
     bindsym l exec cp $HOME/dotfiles/XdefaultsSwitching/LightSolarizedX $HOME/.Xdefaults; mode "default"
-    bindsym d exec cp $HOME/dotfiles/XdefaultsSwitching/DarkCyberX $HOME/.Xdefaults; mode "default"
+    bindsym d exec cp $HOME/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
     bindsym t exec cp $HOME/dotfiles/XdefaultsSwitching/TestX $HOME/.Xdefaults; mode "default"
 
     bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
