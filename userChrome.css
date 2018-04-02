@@ -97,7 +97,7 @@ tab, .tabbrowser-tabs *|tab {
 /**** NEW TAB UP LINE (DEFAULT=NONE) ****/
 .tabbrowser-tab *, .tabs-newtab-button * {
     background: none !important;
-    list-style-image: none !important;
+    /* list-style-image: none !important; */
     margin: 0 0 0 0 !important;
     padding: 0 0 0 0 !important;
     -moz-appearance: none !important;
@@ -113,6 +113,11 @@ tab, .tabbrowser-tabs *|tab {
 /**** TAB SEPARATOR (DEFAULT=NONE) ****/
 .tabbrowser-tab::before, .tabbrowser-tab::after {
     display: none !important;
+}
+
+/**** HIDE CLOSE TAB BUTTON ****/
+.tabbrowser-tab .tab-close-button {
+    display:none!important;
 }
 
 /**** TAB ICONS (DEFAULT=NONE)  ****/
