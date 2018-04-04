@@ -71,7 +71,8 @@ mode "resize" {
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm
 # Open dense terminal
-bindsym $mod+Shift+Return exec urxvt +sb
+# bindsym $mod+Shift+Return exec urxvt +sb
+bindsym $mod+Shift+Return exec xterm -fa scientifica
 
 # Skinned dmenu!
 bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Source Code Pro-30' -p 'dmenu'"
