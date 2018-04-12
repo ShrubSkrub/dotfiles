@@ -71,8 +71,8 @@ mode "resize" {
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm
 # Open dense terminal
-# bindsym $mod+Shift+Return exec urxvt +sb
-bindsym $mod+Shift+Return exec xterm -fs 8
+# bindsym $mod+Shift+Return exec xterm -fs 8
+bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
 
 # Skinned dmenu!
 bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Roboto Mono Medium-32' -p 'dmenu'"
@@ -110,14 +110,24 @@ new_window pixel 0
 new_float normal
 hide_edge_borders both
 
-# class                 border  bground text    indicator child_border
-client.focused          #1E7260 #1E7260 #FFFFFF #00FFC3   #1E7260
-client.focused_inactive #5F676A #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #0C2D26 #0C2D26 #888888 #292D2E   #222222
-client.urgent           #AD0056 #AD0056 #FFFFFF #AD0056   #AD0056
-client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+# Colors
 
-client.background       #FFFFFF
+# class                 border  bground text    indicator child_border
+# client.focused          #1E7260 #1E7260 #FFFFFF #00FFC3   #1E7260
+# client.focused_inactive #5F676A #5F676A #FFFFFF #484E50   #5F676A
+# client.unfocused        #0C2D26 #0C2D26 #888888 #292D2E   #222222
+# client.urgent           #AD0056 #AD0056 #FFFFFF #AD0056   #AD0056
+# client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+# client.background       #FFFFFF
+
+# client.focused          #49B5B5 #49B5B5 #262626
+
+# client.focused          #262626 #262626 #49B5B5
+client.focused          #A9AEB4 #A9AEB4 #262626
+client.focused_inactive #262626 #262626 #A9AEB4
+client.unfocused        #161219 #161219 #A9AEB4
+client.urgent           #AD0056 #AD0056 #FFFFFF
+client.background       #1d1d1d
 
 #------- MODES ------------------------#
 set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m|p) [r|c]"
