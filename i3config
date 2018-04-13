@@ -107,7 +107,7 @@ bindsym $mod+Shift+r restart
 #------- WINDOW CUSOMIZATIONS ---------#
 font pango:Roboto Mono Medium 10
 new_window pixel 0
-new_float normal
+new_float pixel 0
 hide_edge_borders both
 
 # Colors
