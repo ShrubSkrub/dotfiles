@@ -279,7 +279,8 @@ bindsym $mod+i bar mode toggle
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #------- i3 GAPS SPECIFIC -------------#
-gaps inner 15
+gaps inner 20
+gaps outer 5
 # smart_gaps on
 
 set $mode_gaps gaps: (o|i|r)
@@ -289,7 +290,7 @@ bindsym $mod+Shift+g mode "$mode_gaps"
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
         bindsym i      mode "$mode_gaps_inner"
-        bindsym r      gaps inner all set 20; gaps outer all set 0
+        bindsym r      gaps inner all set 20; gaps outer all set 5
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -325,7 +326,7 @@ mode "$mode_gaps_outer" {
         bindsym 8     gaps inner all plus 1
         bindsym 9     gaps inner all minus 1
 
-        bindsym r     gaps outer all set 0
+        bindsym r     gaps outer all set 5
 
         bindsym i     mode $mode_gaps_inner
 
