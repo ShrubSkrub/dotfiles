@@ -144,8 +144,10 @@ set shiftwidth=4
 set expandtab
 " Faster drawing
 set ttyfast
+" Better split char
+set fillchars+=vert:·
 
-" persistant undo
+" persistant undo | TODO get working
 if has('persistent_undo')      "check if your vim version supports it
 set undofile                 "turn on the feature
 set undolevels=5000          "save lots of history
