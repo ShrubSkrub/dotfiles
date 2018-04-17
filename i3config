@@ -112,7 +112,7 @@ hide_edge_borders both
 
 # Colors
 
-# class                 border  bground text    indicator child_border
+# class                   border  bground text    indicator child_border
 # client.focused          #1E7260 #1E7260 #FFFFFF #00FFC3   #1E7260
 # client.focused_inactive #5F676A #5F676A #FFFFFF #484E50   #5F676A
 # client.unfocused        #0C2D26 #0C2D26 #888888 #292D2E   #222222
@@ -268,9 +268,15 @@ bar {
     statusline #ADADAD
     separator  #777777
 
-    focused_workspace  #1E7260 #1E7260 #FFFFFF
+    # focused_workspace  #1E7260 #1E7260 #FFFFFF
+    # active_workspace   #222222 #222222 #FFFFFF
+    # inactive_workspace #000000 #000000 #888888
+    # urgent_workspace   #AD0056 #AD0056 #FFFFFF
+    # binding_mode       #AD0056 #AD0056 #FFFFFF
+
+    focused_workspace  #ADADAD #ADADAD #000000
     active_workspace   #222222 #222222 #FFFFFF
-    inactive_workspace #000000 #000000 #888888
+    inactive_workspace #000000 #000000 #ADADAD
     urgent_workspace   #AD0056 #AD0056 #FFFFFF
     binding_mode       #AD0056 #AD0056 #FFFFFF
   }
