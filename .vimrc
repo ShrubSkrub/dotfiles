@@ -1,4 +1,4 @@
-"--- VUNDLE ---------------------------"
+"--- VUNDLE --------------------- ß ---"
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -147,10 +147,10 @@ set ttyfast
 " Better split char
 set fillchars+=vert:·
 
-" persistant undo | TODO get working
+" persistant undo
 if has('persistent_undo')      "check if your vim version supports it
 set undofile                 "turn on the feature
-set undolevels=5000          "save lots of history
+set undolevels=2500          "save lots of history
 set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 endif
 
