@@ -13,8 +13,8 @@ general {
 # order += "cpu_usage"
 # order += "load"
 order += "disk /"
-order += "battery 0"
 order += "tztime local"
+order += "battery 0"
 order += "ipv6"
 order += "ethernet eth0"
 order += "wireless wlan0"
@@ -24,7 +24,7 @@ wireless wlan0 {
 #         format_down = " Wifi "
         format_down = " No internet! "
         align = "center"
-        min_width = 313
+        min_width = 315
 }
 
 ethernet eth0 {
@@ -41,21 +41,21 @@ ipv6 {
 battery 0 {
         format = " %status%percentage - %remaining "
         format_down = "No battery - WTF did you do?"
-        status_chr = "C "
+        status_chr = "Char - "
         status_bat = ""
-        status_full = "F "
+        status_full = "Full - "
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 20
         threshold_type = time
         hide_seconds = true
         align = "center"
-        min_width = 163
+        min_width = 200
 }
 
 tztime local {
         format = " %a %V - %I:%M:%S - %m/%d "
         align = "center"
-        min_width = 250
+        min_width = 300
 }
 
 disk "/" {
@@ -64,7 +64,7 @@ disk "/" {
         low_threshold = 3.5
         threshold_type = gbytes_avail
         align = "center"
-        min_width = 100
+        min_width = 125
 }
 
 # load {
