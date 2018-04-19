@@ -130,18 +130,17 @@ client.urgent           #AD0056 #AD0056 #FFFFFF
 client.background       #1d1d1d
 
 #------- MODES ------------------------#
-set $wallpaper "wallpaper: (t|g|s|n|d|v|a|m|p) [r|c]"
+set $wallpaper "wallpaper: (d|g|h|p|s|t|v|w) [r|c]"
 bindsym $mod+Shift+w mode $wallpaper
 mode $wallpaper {
-    bindsym t exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/foxwall.jpg"; mode "default"
-    bindsym g exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/grassfox.jpg"; mode "default"
-    bindsym s exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/snowfox.jpg"; mode "default"
-    bindsym n exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/newMeridian.jpg"; mode "default"
     bindsym d exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/dblue.jpg"; mode "default"
-    bindsym v exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/vaporwave.jpg"; mode "default"
-    bindsym a exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/arizonafalls.jpg"; mode "default"
-    bindsym m exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/mountainsV.png"; mode "default"
+    bindsym g exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/grassfox.jpg"; mode "default"
+    bindsym h exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/husky.jpg"; mode "default"
     bindsym p exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/vpalms.jpg"; mode "default"
+    bindsym s exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/snowfox.jpg"; mode "default"
+    bindsym t exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/foxwall.jpg"; mode "default"
+    bindsym v exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/vaporwave.jpg"; mode "default"
+    bindsym w exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/waterfox.jpg"; mode "default"
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
     bindsym c exec xterm -T wch -e "$HOME/dotfiles/scripts/fehChange"; mode "default"
@@ -154,12 +153,11 @@ mode $wallpaper {
 for_window [instance="xterm" title="wch"] floating enable;
 for_window [instance="xterm" title="wch"] resize grow left 40, resize grow right 40, resize grow down 30, resize grow up 30;
 
-set $launch "launch: (f|t|c) [w|v|e|s|x|g]"
+set $launch "launch: (f|t) [w|v|e|s|x|g]"
 bindsym $mod+Tab mode $launch
 mode $launch {
     bindsym f exec firefox; mode "default"
     bindsym t exec xterm; mode "default"
-    bindsym c exec code; mode "default"
 
     # Open Fez terminal | idk why, its more of a joke really...
     bindsym shift+t exec xterm -fa MonoFez; mode "default"
@@ -179,7 +177,6 @@ mode $launch {
 
 # Xdefaults switching!
 set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
-bindsym $mod+Shift+x mode $xswitch
 mode $xswitch {
 
     bindsym n exec cp $HOME/dotfiles/XdefaultsSwitching/NormalX $HOME/.Xdefaults; mode "default"
