@@ -47,8 +47,8 @@ nnoremap ;; :w<CR>
 map <Space> <Leader>
 " leader write
 nmap <Leader>; :w<CR>
-nmap <Leader>z ZZ
-nmap <Leader>q ZQ
+"nmap <Leader>z ZZ
+"nmap <Leader>q ZQ
 " Remove all trailing whitespace
 nnoremap <Leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " Toggle character wrap quickly
@@ -64,6 +64,8 @@ endfun
 nmap <Leader>l :call ToggleCC()<CR>
 " Quick column show
 nmap <Leader>L :set cursorcolumn!<CR>
+" Quick toggle centered scrolling
+nnoremap <Leader>zz :let &scrolloff=50-&scrolloff<CR>
 " For syntastic
 nmap <Leader>n :lprev<Enter>
 nmap <Leader>N :lnext<Enter>
@@ -94,18 +96,7 @@ autocmd FileType c,cpp,cs,java setlocal commentstring=//\ %s
 nmap <Leader>f :ClangFormat<Enter>
 
 """" Easy Motion Keybindings
-map <Space><Space> <Plug>(easymotion-prefix)
-" <leader>f{char} to move to {char}
-map  <Space><Space>f <Plug>(easymotion-bd-f)
-nmap <Space><Space>f <Plug>(easymotion-overwin-f)
-" s{char}{char} to move to {char}{char}
-nmap <Space><Space>s <Plug>(easymotion-overwin-f2)
-" Move to line
-map <Space><Space>L <Plug>(easymotion-bd-jk)
-nmap <Space><Space>L <Plug>(easymotion-overwin-line)
-" Move to word
-" map  <Space><Space>w <Plug>(easymotion-bd-w)
-" nmap <Space><Space>w <Plug>(easymotion-overwin-w)
+" map <Space><Space> <Plug>(easymotion-prefix)
 map  <Space>w <Plug>(easymotion-bd-w)
 nmap <Space>w <Plug>(easymotion-overwin-w)
 
