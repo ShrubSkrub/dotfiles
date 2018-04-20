@@ -75,7 +75,7 @@ bindsym $mod+Return exec xterm
 bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
 
 # Skinned dmenu!
-bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Roboto Mono Medium-32' -p 'dmenu'"
+bindsym $mod+Shift+d exec "dmenu_run -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 10 -fn 'Roboto Mono Medium-24' -p '>'"
 
 # Open quick vim/todo floating term
 bindsym $mod+v exec xterm -T todof -e "vim -c 'Goyo | hi CursorLine cterm=NONE' $HOME/rcode/todo.md"
