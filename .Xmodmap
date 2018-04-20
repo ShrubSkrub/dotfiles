@@ -28,3 +28,6 @@ keycode 32 = o O Next
 keycode 47 = semicolon colon Delete
 keycode 48 = apostrophe quotedbl BackSpace
 keycode 52 = z Z Menu
+
+keycode 53 = x X Left
+keycode 54 = c C Right

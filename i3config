@@ -78,7 +78,7 @@ bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
 bindsym $mod+Shift+d exec "dmenu_run -nf '#BBBBBB' -nb '#0C2D26' -sb '#1E7260' -sf '#EEEEEE' -l 10 -fn 'Roboto Mono Medium-32' -p 'dmenu'"
 
 # Open quick vim/todo floating term
-bindsym $mod+v exec xterm -T todof -e "vim $HOME/rcode/todo.md"
+bindsym $mod+v exec xterm -T todof -e "vim -c 'Goyo | hi CursorLine cterm=NONE' $HOME/rcode/todo.md"
 for_window [instance="xterm" title="todof"] floating enable;
 for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
 

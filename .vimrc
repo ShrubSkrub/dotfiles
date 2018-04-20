@@ -31,7 +31,6 @@ Plugin 'ervandew/supertab'
 Plugin 'luochen1990/rainbow'
 " Writng Plugin
 Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
 
 "--- END PLUGINS ------------"
 call vundle#end()
