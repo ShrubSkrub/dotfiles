@@ -97,6 +97,9 @@ bindsym $mod+F8 exec volume mute toggle
 bindsym $mod+Insert exec volume down
 bindsym $mod+F10 exec volume up
 
+# Trackpack toggle
+bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
+
 #------- OTHER --------------#
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -138,11 +138,11 @@ set ttyfast
 set fillchars+=vert:·
 
 " persistant undo
-if has('persistent_undo')      "check if your vim version supports it
-set undofile                 "turn on the feature
-set undolevels=2500          "save lots of history
-set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
-endif
+" if has('persistent_undo')      "check if your vim version supports it
+" set undofile                 "turn on the feature
+" set undolevels=2500          "save lots of history
+" set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+" endif
 
 "--- VISUAL/HIGHLIGHT ------"
 " Show whitespace characters
