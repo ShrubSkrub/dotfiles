@@ -5,6 +5,8 @@ state=$(xinput list-props "$device" | grep "Device Enabled" | grep -o "[01]$")
 
 if [ $state == '1' ];then
   xinput --disable "$device"
+  notify-send -t 500 "Mouse Off"
 else
   xinput --enable "$device"
+  notify-send -t 500 "Mouse On"
 fi
