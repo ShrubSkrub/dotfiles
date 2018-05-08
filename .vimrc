@@ -87,6 +87,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=3
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 """" Commentary.vim Settings
 " set commenting /* */ to //
@@ -192,7 +194,7 @@ endfu
 com! WP call WordProcessorMode()
 
 " Compile c++
-autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ % -o %:r && ./%:r<CR>
+autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ --std=c++11 % -o %:r && ./%:r<CR>
 " Run c++
 autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
 " Run python
