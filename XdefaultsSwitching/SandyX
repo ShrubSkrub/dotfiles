@@ -9,6 +9,9 @@ XTerm*termName: xterm-256color
 xterm*faceName: Roboto Mono
 xterm*faceSize: 11
 xterm.*.locale: true
+xterm*BorderWidth: 0
+xterm*internalBorder: 3
+
 
 ! Colors
 xterm*foreground:   #ffffff

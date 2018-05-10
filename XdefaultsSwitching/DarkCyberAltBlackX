@@ -9,6 +9,8 @@ XTerm*termName: xterm-256color
 xterm*faceName: Roboto Mono
 xterm*faceSize: 11
 xterm.*.locale: true
+xterm*BorderWidth: 0
+xterm*internalBorder: 3
 
 ! special
 *.foreground:   #A9AEB4
@@ -53,3 +55,4 @@ xterm.*.selectToClipboard: true
 ! Cursors
 Xcursor.theme: Breeze-Adapta
 ! Xcursor.size: 1
+
