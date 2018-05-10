@@ -356,7 +356,7 @@ exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
 # Start compton
 # Stupid thing leaves me with blank screen, need to fix
-# exec --no-startup-id compton -b
+# exec --no-startup-id compton
 
-exec --no-startup-id xterm
+exec --no-startup-id xterm -e "compton -b;figlet ur back;bash"
 

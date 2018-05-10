@@ -1,6 +1,10 @@
 /* @import url('file:///home/shrub/.cache/homepage/colors.css'); */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js");
+}
+
 /* Remove fullscreen transition animation */
 #navigator-toolbox[fullscreenShouldAnimate] {
        transition: none !important;
