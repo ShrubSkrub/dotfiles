@@ -25,7 +25,7 @@ Plugin 'easymotion/vim-easymotion'
 
 """" Testing \/
 " Autocomplete
-Plugin 'exvim/ex-autocomplpop'
+" Plugin 'exvim/ex-autocomplpop'
 Plugin 'ervandew/supertab'
 " Parenthesis Colors
 Plugin 'luochen1990/rainbow'

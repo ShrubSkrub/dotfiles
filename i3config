@@ -101,6 +101,9 @@ bindsym $mod+F10 exec volume up
 # Trackpad toggle
 bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
 
+# Show time/date
+bindsym $mod+comma exec notify-send -t 500 "$(date "+%a %V%n%I:%M:%S%n%m/%d")"
+
 #------- OTHER --------------#
 # reload the configuration file
 bindsym $mod+Shift+c reload
