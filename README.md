@@ -31,12 +31,12 @@ Remember that .Xdefaults is used *instead of* .Xresources...
         * `zathura/zathurarc`
         * `i3/config | Rename it from i3config`
         * `i3status/config` | Rename it from `i3statusconfig`
-    * .mozilla/(Default profile)/chrome
-        * userChrome.css
-        * userChrome.js
-        * userChrome.xml
-        * userContent.css
-4. Add `exec i3` to ~/.xinintrc
+    * `.mozilla/[Default profile]/chrome`
+        * `userChrome.css`
+        * `userChrome.js`
+        * `userChrome.xml`
+        * `userContent.css`
+4. Add `exec i3` to `~/.xinintrc`
 5. Setup Vim
     1. Clone Vundle
         * `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
