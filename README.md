@@ -20,6 +20,7 @@ Remember that .Xdefaults is used *instead of* .Xresources...
 1 Install i3, Vim, Firefox, compton, feh, scrot, i3lock, dunst
     * 'sudo apt-get install i3 vim firefox compton feh scrot i3lock dunst'
 2 Install i3gaps, instructions ![here](https://github.com/Airblader/i3/wiki/Compiling-&-Installing)
+    * Remember to run i3 *before* installing i3gaps, or else you may end up with a black screen.
 3 Copy all dotfiles
     * ~
         * .vimrc
