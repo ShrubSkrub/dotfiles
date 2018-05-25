@@ -1,0 +1,24 @@
+#!/bin/bash
+cd ~
+# Install base applications
+echo "Installing i3, Vim, Firefox, compton, feh, scrot, i3lock, dunst..."
+sudo apt-get install i3 vim firefox compton feh scrot i3lock dunst
+
+# Copy dotfiles
+echo "Copying dotfiles..."
+cp ~/dotfiles/.Xmodmap ~/.Xmodmap
+# cp ~/dotfiles/i3config ~/.config/i3/config
+# cp ~/dotfiles/i3statusconfig ~/.config/i3status/config
+cp ~/dotfiles/.vimrc ~/.vimrc
+mkdir ~/.config/zathura
+cp ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
+cp ~/dotfiles/compton.conf ~/.config/config.conf
+cp ~/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX ~/.Xdefaults
+# TODO Find way to install Firefox dotfiles
+
+# Install Vundle and plugins
+echo "Installing vundle and vim plugins..."
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+
+echo "Script is finished. Exit the chroot, then run 'sudo enter-chroot xinit' and follow the i3 setup instructions. Once that's done, run 'installScriptP2'"
