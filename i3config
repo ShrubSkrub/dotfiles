@@ -88,6 +88,7 @@ bindsym $mod+Shift+f exec firefox
 
 # Lock with i3lock
 bindsym $mod+n exec lock -p -t " " -- scrot
+# bindsym $mod+n exec i3lock -f -i ~/dotfiles/lockfoxblur.png
 
 # Brightness with mod
 bindsym $mod+F6 exec brightness down
@@ -289,8 +290,8 @@ bindsym $mod+i bar mode toggle
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #------- i3 GAPS SPECIFIC -------------#
-gaps inner 20
-gaps outer 5
+gaps inner 15
+gaps outer 0
 # smart_gaps on
 
 set $mode_gaps gaps: (o|i|r)

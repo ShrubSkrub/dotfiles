@@ -29,7 +29,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ervandew/supertab'
 " Parenthesis Colors
 Plugin 'luochen1990/rainbow'
-" Writng Plugin
+" Writing Plugin
 Plugin 'junegunn/goyo.vim'
 
 "--- END PLUGINS ------------"
@@ -154,7 +154,7 @@ set listchars=tab:>-,trail:¬,extends:»,precedes:«,nbsp:§
 
 " Highlighting
 set t_Co=256
-set cursorline
+" set cursorline
 hi CursorLine cterm=reverse
 hi CursorLineNr cterm=reverse
 hi CursorColumn cterm=reverse
