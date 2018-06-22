@@ -1,0 +1,50 @@
+rename w9s3EvalExp.jpg
+rename w9s4RelExp.jpg
+open_with ./
+rename w9s5ProgPlay.jpg
+search sda
+open_with q
+open_with feh
+mkdir Pics
+search .conf
+rename oldScreencap1.jpg
+rename screencap.jpg
+rename hammock.jpg
+rename DarkCyberAltBlackX
+mkdir random
+rename sadfox.jpg
+open_with ZQ
+rename cisWk13.pdf
+search dot
+mpv
+open_with mpv
+search 
+search hom
+open_with 
+delete 
+rename wk14p3NamesArray.jpg
+rename wk14p4BoundsError.jpg
+search van
+shell 
+shell du -h
+rename w16p1FunP1.jpg
+rename w16p2FunProg2.jpg
+rename calculatorcode.cpp
+mkdir tempFileStore
+mkdir firefox
+rename w17p4.jpg
+rename w17p2.jpg
+rename w17p5.jpg
+rename w17p6.cp
+rename w17p6.jpg
+rename OwenDie.jpg
+decP1fix.jpg
+rename decP1fix.jpg
+rename decP2height.jpg
+rename decP3pemdas.cpp
+rename decP3pemdas.jpg
+search w15
+
+bulkrename 
+delete
+open_with vim

@@ -2,7 +2,9 @@
 #
 #
 # Prompt
-export PS1=" \[\e[34m\]\T\[\e[m\] \[\e[35m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
+# export PS1=" \[\e[34m\]\T\[\e[m\] \[\e[35m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
+export PS1="\[\e[m\] \[\e[35m\]\w\[\e[m\] \[\e[32m\]\\$\[\e[m\] "
+
 
 # Notes alias!
 alias todo="vim /home/shrub/rcode/todo.md"
