@@ -1,19 +1,20 @@
 #!/bin/bash
 cd ~
 # Install base applications
-echo "Installing i3, Vim, Firefox, compton, feh, scrot, i3lock, dunst..."
-sudo apt-get install i3 vim firefox compton feh scrot i3lock dunst
+echo "Installing i3, Vim, Firefox, compton, feh, scrot, i3lock, dunst, clang-format, figlet, w3m..."
+sudo apt-get install i3 vim firefox compton feh scrot i3lock dunst clang-format figlet w3m
 
 # Copy dotfiles
 echo "Copying dotfiles..."
-cp ~/dotfiles/.Xmodmap ~/.Xmodmap
+# cp ~/dotfiles/.Xmodmap ~/.Xmodmap
 # cp ~/dotfiles/i3config ~/.config/i3/config
 # cp ~/dotfiles/i3statusconfig ~/.config/i3status/config
 cp ~/dotfiles/.vimrc ~/.vimrc
 mkdir ~/.config/zathura
 cp ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
-cp ~/dotfiles/compton.conf ~/.config/config.conf
+cp ~/dotfiles/compton.conf ~/.config/compton.conf
 cp ~/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX ~/.Xdefaults
+xrdb ~/.Xdefaults
 # TODO Find way to install Firefox dotfiles
 
 # Install Vundle and plugins

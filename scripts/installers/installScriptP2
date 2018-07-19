@@ -28,6 +28,7 @@ sudo make install
 # Copy dotfiles
 echo "Copying dotfiles..."
 cp ~/dotfiles/i3config ~/.config/i3/config
+mkdir ~/.config/i3status
 cp ~/dotfiles/i3statusconfig ~/.config/i3status/config
 
 echo "Finished. All that's left is to manually copy the firefox dotfiles, if you want them."
