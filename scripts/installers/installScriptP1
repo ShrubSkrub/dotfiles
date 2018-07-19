@@ -15,6 +15,7 @@ cp ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 cp ~/dotfiles/compton.conf ~/.config/compton.conf
 cp ~/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX ~/.Xdefaults
 xrdb ~/.Xdefaults
+cat ~/dotfiles/.bashrc >> ~/.bashrc
 # TODO Find way to install Firefox dotfiles
 
 # Install Vundle and plugins
