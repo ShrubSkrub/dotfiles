@@ -33,11 +33,11 @@ cp ~/dotfiles/i3statusconfig ~/.config/i3status/config
 
 # Install google fonts
 echo "Installing google fonts..."
-chmod +x googleFontsInstaller
-./googleFontsInstaller
+cd ~
+~/dotfiles/scripts/installers/googleFontsInstaller
 
 # Install Microsoft fonts (ugh)
-echo "Installing Microsoft fonts..."
-sudo apt-get install ttf-mscorefonts-installer
+# echo "Installing Microsoft fonts..."
+# sudo apt-get install ttf-mscorefonts-installer
 
 echo "Finished. All that's left is to manually copy the firefox dotfiles, if you want them."
