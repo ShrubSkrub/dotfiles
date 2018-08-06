@@ -6,14 +6,11 @@ sudo apt-get install i3 vim firefox compton feh scrot i3lock dunst clang-format 
 
 # Copy dotfiles
 echo "Copying dotfiles..."
-# cp ~/dotfiles/.Xmodmap ~/.Xmodmap
-# cp ~/dotfiles/i3config ~/.config/i3/config
-# cp ~/dotfiles/i3statusconfig ~/.config/i3status/config
-cp ~/dotfiles/.vimrc ~/.vimrc
+cp ~/dotfiles/dots/.vimrc ~/.vimrc
 mkdir ~/.config/zathura
-cp ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
-cp ~/dotfiles/compton.conf ~/.config/compton.conf
-cp ~/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX ~/.Xdefaults
+cp ~/dotfiles/dots/.config/zathura/zathurarc ~/.config/zathura/zathurarc
+cp ~/dotfiles/dots/.config/compton.conf ~/.config/compton.conf
+cp ~/dotfiles/dots/.Xdefaults ~/.Xdefaults
 # xrdb ~/.Xdefaults
 cat ~/dotfiles/.bashrc >> ~/.bashrc
 # TODO Find way to install Firefox dotfiles
