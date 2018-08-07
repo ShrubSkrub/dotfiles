@@ -23,4 +23,5 @@ Left alt is your `mod` key.  (`M` means `mod`)
     * `M+n` Lock computer (i3lock)
     * `M+Shift+c` reload i3
     * `M+Shift+r` restart i3
-    * Other, more random bindings can be found in the `i3config` file.
+
+Don't forget to read through [i3bindings.md](i3bindings.md) once you the hang of these basic commands!
