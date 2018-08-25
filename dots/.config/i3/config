@@ -90,7 +90,7 @@ bindsym $mod+Shift+f exec firefox
 # Lock with i3lock
 # \/ That command is for i3lock-fancy
 # bindsym $mod+n exec lock -p -t " " -- scrot
-bindsym $mod+n exec i3lock -f -i ~/dotfiles/dots/misc/lockscreen.png
+bindsym $mod+n exec i3lock -f -i ~/dotfiles/misc/lockscreen.png
 
 # Brightness with mod
 bindsym $mod+F6 exec brightness down
