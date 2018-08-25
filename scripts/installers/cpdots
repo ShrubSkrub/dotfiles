@@ -1,0 +1,14 @@
+# Copy dotfiles
+echo "Copying dotfiles..."
+cp ~/dotfiles/dots/.vimrc ~/.vimrc
+# mkdir ~/.config/zathura
+cp ~/dotfiles/dots/.config/zathura/zathurarc ~/.config/zathura/zathurarc
+cp ~/dotfiles/dots/.config/compton.conf ~/.config/compton.conf
+cp ~/dotfiles/dots/.Xdefaults ~/.Xdefaults
+# xrdb ~/.Xdefaults
+# cat ~/dotfiles/dots/.bashrc >> ~/.bashrc
+# Copy dotfiles
+cp ~/dotfiles/dots/.config/i3/config ~/.config/i3/config
+# mkdir ~/.config/i3status
+cp ~/dotfiles/dots/.config/i3status/config ~/.config/i3status/config
+echo "Done!"

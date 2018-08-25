@@ -189,13 +189,13 @@ mode $launch {
 set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
 mode $xswitch {
 
-    bindsym n exec cp $HOME/dotfiles/XdefaultsSwitching/NormalX $HOME/.Xdefaults; mode "default"
-    bindsym c exec cp $HOME/dotfiles/XdefaultsSwitching/CyberpunkX $HOME/.Xdefaults; mode "default"
-    bindsym m exec cp $HOME/dotfiles/XdefaultsSwitching/MatrixX $HOME/.Xdefaults; mode "default"
-    bindsym s exec cp $HOME/dotfiles/XdefaultsSwitching/SandyX $HOME/.Xdefaults; mode "default"
-    bindsym l exec cp $HOME/dotfiles/XdefaultsSwitching/LightSolarizedX $HOME/.Xdefaults; mode "default"
-    bindsym d exec cp $HOME/dotfiles/XdefaultsSwitching/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
-    bindsym t exec cp $HOME/dotfiles/XdefaultsSwitching/TestX $HOME/.Xdefaults; mode "default"
+    bindsym n exec cp $HOME/dotfiles/xthemes/NormalX $HOME/.Xdefaults; mode "default"
+    bindsym c exec cp $HOME/dotfiles/xthemes/CyberpunkX $HOME/.Xdefaults; mode "default"
+    bindsym m exec cp $HOME/dotfiles/xthemes/MatrixX $HOME/.Xdefaults; mode "default"
+    bindsym s exec cp $HOME/dotfiles/xthemes/SandyX $HOME/.Xdefaults; mode "default"
+    bindsym l exec cp $HOME/dotfiles/xthemes/LightSolarizedX $HOME/.Xdefaults; mode "default"
+    bindsym d exec cp $HOME/dotfiles/xthemes/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
+    bindsym t exec cp $HOME/dotfiles/xthemes/TestX $HOME/.Xdefaults; mode "default"
 
     bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
 
