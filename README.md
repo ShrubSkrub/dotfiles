@@ -12,7 +12,7 @@ Just a repository for my dotfiles...
 * **Image Viewer/Wallpapers:** Feh
 * **Screenshots:** Scrot
 * **PDF Viewer:** Zathura
-* **Lockscreen:** [i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
+* **Lockscreen:** i3lock
 
 ## Setup
 After cloning this repo to your home folder...
@@ -23,7 +23,6 @@ After cloning this repo to your home folder...
 A few things will not be installed automatically:
 * dunstrc
 * Gtk Theme
-* [i3lock-fancy](https://github.com/meskarune/i3lock-fancy)
 * Vimium dotfiles
 * Firefox custom UI dotfiles
 * Ranger and rtv dotfiles that improve their usage of Feh
