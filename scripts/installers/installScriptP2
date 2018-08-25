@@ -40,4 +40,6 @@ cd ~
 # echo "Installing Microsoft fonts..."
 # sudo apt-get install ttf-mscorefonts-installer
 
+i3-msg restart
+
 echo "Finished. All that's left is to manually copy the firefox dotfiles, if you want them."

@@ -12,7 +12,7 @@ cp ~/dotfiles/dots/.config/zathura/zathurarc ~/.config/zathura/zathurarc
 cp ~/dotfiles/dots/.config/compton.conf ~/.config/compton.conf
 cp ~/dotfiles/dots/.Xdefaults ~/.Xdefaults
 # xrdb ~/.Xdefaults
-cat ~/dotfiles/.bashrc >> ~/.bashrc
+cat ~/dotfiles/dots/.bashrc >> ~/.bashrc
 # TODO Find way to install Firefox dotfiles
 
 # Install Vundle and plugins
