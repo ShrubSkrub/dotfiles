@@ -1,0 +1,4 @@
+#!/bin/bash
+THEME=$(find ~/dotfiles/xthemes/ -type f ! -name "*.*" -printf "%P\n"| dmenu -i -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 40 -fn 'Roboto Mono Medium-24' -p 'X')
+cp ~/dotfiles/xthemes/$THEME $HOME/.Xdefaults
+# xrdb ~/.Xdefaults

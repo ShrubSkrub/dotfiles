@@ -88,8 +88,6 @@ for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink
 bindsym $mod+Shift+f exec firefox
 
 # Lock with i3lock
-# \/ That command is for i3lock-fancy
-# bindsym $mod+n exec lock -p -t " " -- scrot
 bindsym $mod+n exec i3lock -f -i $(find ~/dotfiles/misc/lockscreens -name "*.png" | shuf -n1)
 
 # Brightness with mod
@@ -153,15 +151,16 @@ mode $wallpaper {
     bindsym w exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/waterfox.jpg"; mode "default"
 
     bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
-    bindsym c exec xterm -T wch -e "$HOME/dotfiles/scripts/fehChange"; mode "default"
+    # bindsym c exec xterm -T wch -e "$HOME/dotfiles/scripts/fehChange"; mode "default"
+    bindsym c exec ~/dotfiles/scripts/dmenuWall; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym w mode "default"
 }
-for_window [instance="xterm" title="wch"] floating enable;
-for_window [instance="xterm" title="wch"] resize grow left 40, resize grow right 40, resize grow down 30, resize grow up 30;
+# for_window [instance="xterm" title="wch"] floating enable;
+# for_window [instance="xterm" title="wch"] resize grow left 40, resize grow right 40, resize grow down 30, resize grow up 30;
 
 set $launch "launch: (f|t) [w|v|e|s|x|g]"
 bindsym $mod+Tab mode $launch
@@ -169,14 +168,15 @@ mode $launch {
     bindsym f exec firefox; mode "default"
     bindsym t exec xterm; mode "default"
 
-    # Open Fez terminal | idk why, its more of a joke really...
+    # Open joke terminal
     bindsym shift+t exec xterm -fa MonoFez; mode "default"
 
     bindsym w mode $wallpaper
     bindsym v mode $volume
     bindsym e mode "passthrough"
     bindsym s mode $screencap
-    bindsym x mode $xswitch
+    # bindsym x mode $xswitch
+    bindsym x exec ~/dotfiles/scripts/dmenuXtheme; mode "default"
     bindsym g mode $mode_gaps
 
     # back to normal: Enter or Escape
@@ -186,24 +186,24 @@ mode $launch {
 }
 
 # Xdefaults switching!
-set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
-mode $xswitch {
+# set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
+# mode $xswitch {
 
-    bindsym n exec cp $HOME/dotfiles/xthemes/NormalX $HOME/.Xdefaults; mode "default"
-    bindsym c exec cp $HOME/dotfiles/xthemes/CyberpunkX $HOME/.Xdefaults; mode "default"
-    bindsym m exec cp $HOME/dotfiles/xthemes/MatrixX $HOME/.Xdefaults; mode "default"
-    bindsym s exec cp $HOME/dotfiles/xthemes/SandyX $HOME/.Xdefaults; mode "default"
-    bindsym l exec cp $HOME/dotfiles/xthemes/LightSolarizedX $HOME/.Xdefaults; mode "default"
-    bindsym d exec cp $HOME/dotfiles/xthemes/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
-    bindsym t exec cp $HOME/dotfiles/xthemes/TestX $HOME/.Xdefaults; mode "default"
+#     bindsym n exec cp $HOME/dotfiles/xthemes/NormalX $HOME/.Xdefaults; mode "default"
+#     bindsym c exec cp $HOME/dotfiles/xthemes/CyberpunkX $HOME/.Xdefaults; mode "default"
+#     bindsym m exec cp $HOME/dotfiles/xthemes/MatrixX $HOME/.Xdefaults; mode "default"
+#     bindsym s exec cp $HOME/dotfiles/xthemes/SandyX $HOME/.Xdefaults; mode "default"
+#     bindsym l exec cp $HOME/dotfiles/xthemes/LightSolarizedX $HOME/.Xdefaults; mode "default"
+#     bindsym d exec cp $HOME/dotfiles/xthemes/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
+#     bindsym t exec cp $HOME/dotfiles/xthemes/TestX $HOME/.Xdefaults; mode "default"
 
-    bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
+#     bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-    bindsym Tab mode "default"
-}
+#     # back to normal: Enter or Escape
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+#     bindsym Tab mode "default"
+# }
 
 # Screenshots!
 set $screencap "screencap: (s|d|w|p) [r]"
