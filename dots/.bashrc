@@ -32,3 +32,6 @@ EDITOR="/usr/bin/vim"
 
 # RTV VIM for editor
 RTV_EDITOR="/usr/bin/vim"
+
+# Neofetch alias
+alias owofetch="neofetch --ascii ~/dotfiles/misc/ascii"
