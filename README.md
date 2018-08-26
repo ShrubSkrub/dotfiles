@@ -2,7 +2,7 @@
 Just a repository for my dotfiles...
 
 ![Image of lockscreen](./misc/lockscreens/green.png?raw=true "Lockscreen")
-![Image of setup](screencap.jpg?raw=true "Setup")
+![Image of setup](./misc/screencap.jpg?raw=true "Setup")
 
 ### Ingredients:
 * **WM:** i3-gaps (w/compton)
