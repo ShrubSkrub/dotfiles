@@ -80,9 +80,10 @@ bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
 bindsym $mod+Shift+d exec "dmenu_run -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 10 -fn 'Roboto Mono Medium-24' -p '>'"
 
 # Open quick vim/todo floating term
-bindsym $mod+v exec xterm -T todof -e "vim -c 'Goyo | hi CursorLine cterm=NONE' $HOME/rcode/todo.md"
+bindsym $mod+v exec xterm -T todof -e "vim -c 'Goyo | hi CursorLine cterm=NONE' $HOME/todo.md"
 for_window [instance="xterm" title="todof"] floating enable;
 for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
+for_window [instance="xterm" title="todof"] move position center;
 
 # Quick open Firefox
 bindsym $mod+Shift+f exec firefox
