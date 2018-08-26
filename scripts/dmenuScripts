@@ -1,0 +1,12 @@
+#!/bin/bash
+choice=$(ls ~/dotfiles/scripts/ | dmenu -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 40 -fn 'Roboto Mono Medium-24' -p 'Run')
+
+if [ "$choice" == "installers" ]
+then
+    choice=$(find ~/dotfiles/scripts/installers/ -type f ! -name "*.*" -printf "%P\n" | dmenu -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 40 -fn 'Roboto Mono Medium-24' -p 'Run')
+    ~/dotfiles/scripts/installers/$choice
+else
+    ~/dotfiles/scripts/$choice
+fi
+
+

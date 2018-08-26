@@ -11,4 +11,6 @@ cp ~/dotfiles/dots/.Xdefaults ~/.Xdefaults
 cp ~/dotfiles/dots/.config/i3/config ~/.config/i3/config
 # mkdir ~/.config/i3status
 cp ~/dotfiles/dots/.config/i3status/config ~/.config/i3status/config
+
+notify-send -t 500 "Dotfiles copied."
 echo "Done!"

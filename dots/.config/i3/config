@@ -162,22 +162,19 @@ mode $wallpaper {
 # for_window [instance="xterm" title="wch"] floating enable;
 # for_window [instance="xterm" title="wch"] resize grow left 40, resize grow right 40, resize grow down 30, resize grow up 30;
 
-set $launch "launch: (f|t) [w|v|e|s|x|g]"
+set $launch "launch: (f) [g|r|s|v|w|x]"
 bindsym $mod+Tab mode $launch
 mode $launch {
     bindsym f exec firefox; mode "default"
-    bindsym t exec xterm; mode "default"
+    # bindsym t exec xterm; mode "default"
 
-    # Open joke terminal
-    bindsym shift+t exec xterm -fa MonoFez; mode "default"
-
-    bindsym w mode $wallpaper
-    bindsym v mode $volume
-    bindsym e mode "passthrough"
-    bindsym s mode $screencap
-    # bindsym x mode $xswitch
-    bindsym x exec ~/dotfiles/scripts/dmenuXtheme; mode "default"
     bindsym g mode $mode_gaps
+    bindsym r exec ~/dotfiles/scripts/dmenuScripts; mode "default"
+    bindsym s mode $screencap
+    bindsym v mode $volume
+    bindsym w mode $wallpaper
+    bindsym x exec ~/dotfiles/scripts/dmenuXtheme; mode "default"
+    # bindsym x mode $xswitch
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
