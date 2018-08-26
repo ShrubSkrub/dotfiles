@@ -89,7 +89,7 @@ for_window [instance="xterm" title="todof"] move position center;
 bindsym $mod+Shift+f exec firefox
 
 # Lock with i3lock
-bindsym $mod+n exec i3lock -f -i $(find ~/dotfiles/misc/lockscreens -name "*.png" | shuf -n1)
+bindsym $mod+n exec i3lock -t -f -i $(find ~/dotfiles/misc/lockscreens -name "*.png" | shuf -n1)
 
 # Brightness with mod
 bindsym $mod+F6 exec brightness down
