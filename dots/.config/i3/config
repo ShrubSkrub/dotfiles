@@ -72,8 +72,8 @@ mode "resize" {
 #------- APPS/STUFF ---------#
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec xterm
+
 # Open dense terminal
-# bindsym $mod+Shift+Return exec xterm -fs 8
 bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
 
 # Skinned dmenu!
@@ -120,17 +120,6 @@ new_float pixel 0
 hide_edge_borders both
 
 # Colors
-
-# class                   border  bground text    indicator child_border
-# client.focused          #1E7260 #1E7260 #FFFFFF #00FFC3   #1E7260
-# client.focused_inactive #5F676A #5F676A #FFFFFF #484E50   #5F676A
-# client.unfocused        #0C2D26 #0C2D26 #888888 #292D2E   #222222
-# client.urgent           #AD0056 #AD0056 #FFFFFF #AD0056   #AD0056
-# client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
-# client.background       #FFFFFF
-
-# client.focused          #49B5B5 #49B5B5 #262626
-
 # client.focused          #262626 #262626 #49B5B5
 client.focused          #A9AEB4 #A9AEB4 #262626
 client.focused_inactive #262626 #262626 #A9AEB4
@@ -155,14 +144,12 @@ mode $wallpaper {
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym w mode "default"
 }
 
 set $launch "launch: (f) [g|r|s|v|w|x]"
 bindsym $mod+Tab mode $launch
 mode $launch {
     bindsym f exec firefox; mode "default"
-    # bindsym t exec xterm; mode "default"
 
     bindsym g mode $mode_gaps
     bindsym r exec ~/dotfiles/scripts/dmenuScripts; mode "default"
@@ -170,33 +157,12 @@ mode $launch {
     bindsym v mode $volume
     bindsym w mode $wallpaper
     bindsym x exec ~/dotfiles/scripts/dmenuXtheme; mode "default"
-    # bindsym x mode $xswitch
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym Tab mode "default"
 }
-
-# Xdefaults switching!
-# set $xswitch "xtheme: (n|c|m|s|l|d|t) [C]"
-# mode $xswitch {
-
-#     bindsym n exec cp $HOME/dotfiles/xthemes/NormalX $HOME/.Xdefaults; mode "default"
-#     bindsym c exec cp $HOME/dotfiles/xthemes/CyberpunkX $HOME/.Xdefaults; mode "default"
-#     bindsym m exec cp $HOME/dotfiles/xthemes/MatrixX $HOME/.Xdefaults; mode "default"
-#     bindsym s exec cp $HOME/dotfiles/xthemes/SandyX $HOME/.Xdefaults; mode "default"
-#     bindsym l exec cp $HOME/dotfiles/xthemes/LightSolarizedX $HOME/.Xdefaults; mode "default"
-#     bindsym d exec cp $HOME/dotfiles/xthemes/DarkCyberAltBlackX $HOME/.Xdefaults; mode "default"
-#     bindsym t exec cp $HOME/dotfiles/xthemes/TestX $HOME/.Xdefaults; mode "default"
-
-#     bindsym Shift+c exec xterm -T wch -e "$HOME/dotfiles/scripts/xThemeChange"; mode "default"
-
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-#     bindsym Tab mode "default"
-# }
 
 # Screenshots!
 set $screencap "screencap: (s|d|w|p) [r]"
@@ -227,7 +193,6 @@ mode $screencap {
 # Special mode to use alt key combinations
 bindsym $mod+Alt_R mode "passthrough"
 mode "passthrough" {
-    # bindsym $mod+Escape mode "default"
     bindsym $mod+Alt_R mode "default"
 }
 
@@ -252,7 +217,6 @@ bar {
         tray_output primary
 
         i3bar_command i3bar -t
-        # font pango:Source Code Pro Medium 10
         font pango:Roboto Mono Regular 10
 
         # hidden bar, show with mod
@@ -267,12 +231,6 @@ bar {
     background #000000
     statusline #ADADAD
     separator  #777777
-
-    # focused_workspace  #1E7260 #1E7260 #FFFFFF
-    # active_workspace   #222222 #222222 #FFFFFF
-    # inactive_workspace #000000 #000000 #888888
-    # urgent_workspace   #AD0056 #AD0056 #FFFFFF
-    # binding_mode       #AD0056 #AD0056 #FFFFFF
 
     focused_workspace  #ADADAD #ADADAD #000000
     active_workspace   #222222 #222222 #FFFFFF
@@ -353,10 +311,6 @@ exec xmodmap $HOME/.Xmodmap
 # Lock when afk | I can't tell if this is working or not...
 exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 
-# Start compton
-# Stupid thing leaves me with blank screen, need to fix
-# exec --no-startup-id compton
-
-# exec --no-startup-id xterm -e "compton -b;figlet ur back;bash"
+# Start compton and open terminal
 exec --no-startup-id xterm -e "compton -b;bash"
 
