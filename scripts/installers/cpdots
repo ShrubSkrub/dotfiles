@@ -12,5 +12,8 @@ cp ~/dotfiles/dots/.config/i3/config ~/.config/i3/config
 # mkdir ~/.config/i3status
 cp ~/dotfiles/dots/.config/i3status/config ~/.config/i3status/config
 
+echo "Copying scripts..."
+cp ~/dotfiles/scripts/doing ~/.local/bin/doing
+
 notify-send -t 500 "Dotfiles copied."
 echo "Done!"

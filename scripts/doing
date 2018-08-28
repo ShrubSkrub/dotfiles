@@ -1,0 +1,36 @@
+#!/bin/bash
+# Script to keep track of what you are doing
+
+storage=~/.doing
+
+case "$1" in
+    what) ;&
+    w) ;&
+    -w) tail -n 1 $storage ;;
+    l) ;&
+    -l) tail -n 5 $storage ;;
+    a) ;&
+    -a) cat -n $storage ;;
+    e) ;&
+    -e) vim $storage ;;
+    "") echo "Usage: doing [OPTION]... [INPUT]...
+  -w Find out what you were doing.
+  -l Find out the last 5 things you were doing.
+  -a Find out all the things you were doing.
+  -e Edit the things you were doing.
+  -c Delete all the things you were doing.
+
+Example:
+  doing Trying to figure out how to use doing" ;;
+    c) ;&
+    -c) read -p "Are you sure you delete history? " -n 1 -r
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            rm $storage
+        fi
+        echo
+        ;;
+    *) echo "$* | $(date +%a\ %m/%e\ %H:%M)" >> $storage
+       echo "> $*"
+
+esac
