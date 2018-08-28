@@ -146,11 +146,12 @@ mode $wallpaper {
     bindsym Escape mode "default"
 }
 
-set $launch "launch: (f) [g|r|s|v|w|x]"
+set $launch "launch: (f) [d|g|r|s|v|w|x]"
 bindsym $mod+Tab mode $launch
 mode $launch {
     bindsym f exec firefox; mode "default"
 
+    bindsym d exec notify-send -t 3000 "Doing:\n$(doing w)"; mode "default"
     bindsym g mode $mode_gaps
     bindsym r exec ~/dotfiles/scripts/dmenuScripts; mode "default"
     bindsym s mode $screencap
