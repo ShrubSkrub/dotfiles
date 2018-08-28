@@ -363,5 +363,5 @@ exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
 # exec --no-startup-id compton
 
 # exec --no-startup-id xterm -e "compton -b;figlet ur back;bash"
-exec --no-startup-id xterm -e "compton -b;~/dotfiles/misc/OwO;bash"
+exec --no-startup-id xterm -e "compton -b;bash"
 
