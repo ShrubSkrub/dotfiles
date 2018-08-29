@@ -310,7 +310,7 @@ exec xmodmap $HOME/.Xmodmap
 # Buggy, but seems to work after two tries, so whatever
 
 # Lock when afk | I can't tell if this is working or not...
-exec --nostartup-id xautolock -time 4 -locker "i3lock -i Downloads/pwf.png -f"
+exec --nostartup-id xautolock -time 1 -locker i3lock
 
 # Start compton and open terminal
 exec --no-startup-id xterm -e "compton -b;bash"
