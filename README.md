@@ -16,6 +16,17 @@ Just a repository for my dotfiles...
 * **Lockscreen:** i3lock
 
 ## Setup
+
+Chroot:
+Download from 
+https://goo.gl/fd3zc
+
+Next, run:
+sudo sh ~/Downloads/crouton -r xenial -t xorg
+
+then install git:
+`sudo apt-get install git`
+
 After cloning this repo to your home folder...
 1. Run `dotfiles/scripts/installers/installscriptP1`
 2. Start i3 and run through the setup
