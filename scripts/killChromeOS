@@ -1,0 +1,1 @@
+ps ax -o sess,pgrp,pid,cmd | awk '$4 ~ /\/chrome$/ { print $3 }' | xargs $nodo kill
