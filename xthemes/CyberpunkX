@@ -53,5 +53,5 @@ xterm*internalBorder: 3
 xterm.*.selectToClipboard: true
 
 ! Cursors
-Xcursor.theme: Breeze-Adapta
+Xcursor.theme: TheDOT 0.5 dark
 ! Xcursor.size: 1
