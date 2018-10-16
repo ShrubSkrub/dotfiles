@@ -1,5 +1,5 @@
 # dotfiles
-Just a repository for my dotfiles...
+Forked from shrubskrub's dotfiles. **Now with 100% less foxes!**
 
 ![Image of lockscreen](./misc/lockscreens/green.png?raw=true "Lockscreen")
 ![Image of setup](./misc/screencap.jpg?raw=true "Setup")
