@@ -45,5 +45,5 @@ xterm*color15: #8a8a8a
 xterm.*.selectToClipboard: true
 
 ! Cursors
-Xcursor.theme: Breeze-Adapta
+Xcursor.theme: TheDOT 0.5 dark
 ! Xcursor.size: 1
