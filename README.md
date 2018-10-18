@@ -41,6 +41,13 @@ A few things will not be installed automatically:
 * Chromebook specific Xmodmap configuration (for keybinds such as `Search` to `Ctrl`)
 
 You'll have to do those manually, lazy.
+## Re-installing from a .tar.gz file
+
+1. Download cruton from https://goo.gl/fd3zc
+2. Go to the crosh terminal (ctrl + alt + t) and type `shell`
+3. Restore the backup with `sudo sh -e ~/Downloads/crouton -f path_to_backup.tar.gz`
+4. Enter the chroot with `sudo enter-chroot xinit`
+
 
 ## Other info
 All actual configuration files are found under `dots` in the same way they would be if it was under `~`.
