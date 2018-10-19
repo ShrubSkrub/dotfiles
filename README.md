@@ -21,8 +21,7 @@ Chroot:
 Download from 
 https://goo.gl/fd3zc
 
-Next, run:
-sudo sh ~/Downloads/crouton -r xenial -t xorg
+Next, run: `sudo sh ~/Downloads/crouton -r xenial -t xorg`
 
 then install git:
 `sudo apt-get install git`
@@ -48,6 +47,9 @@ You'll have to do those manually, lazy.
 3. Restore the backup with `sudo sh -e ~/Downloads/crouton -f path_to_backup.tar.gz`
 4. Enter the chroot with `sudo enter-chroot xinit`
 
+## Backing up to a .tar.gz file
+
+From the Crosh Shell, run `sudo edit-chroot -b xenial`
 
 ## Other info
 All actual configuration files are found under `dots` in the same way they would be if it was under `~`.
