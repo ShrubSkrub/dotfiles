@@ -1,0 +1,6 @@
+#!/bin/bash
+# For blurring wallpapers
+i="9"
+A=$(echo "($i + 1) * 2.4" | bc -l)
+B=$(echo "($i + 1) * 1.2" | bc -l)
+convert $1 -blur $A,$B /home/shrub/dotfiles/misc/b-wallpapers/b-$1

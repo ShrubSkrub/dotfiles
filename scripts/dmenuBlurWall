@@ -1,0 +1,3 @@
+#!/bin/bash
+WALL=$(ls ~/.b-walls/ | dmenu -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 40 -fn 'Roboto Mono Medium-11' -p 'wall')
+feh --bg-fill ~/.b-walls/$WALL

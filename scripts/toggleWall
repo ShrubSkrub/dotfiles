@@ -1,0 +1,15 @@
+#!/bin/bash
+# Toggle between blurred and non-blurred variants of wallpapers
+
+CURRENTWALL=$(tail -n1 ~/.fehbg | cut -d"'" -f2)
+NAME=${CURRENTWALL##*/}
+if tail -n1 ~/.fehbg | cut -d"'" -f2 | grep -q "b-"; then
+    echo "Wallpaper is currently blurred; switching to not blurred"
+    CNAME=$(echo $NAME | tail -c +3)
+    feh --bg-fill "$HOME/dotfiles/wallpapers/$CNAME"
+else
+    echo "Wallpaper is not blurred; switching to blurred"
+    PREFIX="b-"
+    feh --bg-fill "$HOME/dotfiles/misc/b-wallpapers/$PREFIX$NAME"
+fi
+
