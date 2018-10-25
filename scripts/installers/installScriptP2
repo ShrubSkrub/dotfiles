@@ -3,6 +3,7 @@ cd ~
 # Install i3 gaps (ripped from https://github.com/Airblader/i3/wiki/Compiling-&-Installing)
 echo "Installing i3gaps dependencies..."
 
+sudo apt-get install software-properties-common # fixed add-apt-repository not found
 sudo add-apt-repository ppa:aguignard/ppa
 sudo apt-get update
 sudo apt-get install libxcb-xrm-dev
