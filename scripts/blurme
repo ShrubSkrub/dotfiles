@@ -109,17 +109,18 @@ function create_images {
 
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Create transition images ...'; fi
 
-    local i="0"
+    # local i="0"
 
-    while [ $i -lt "10" ]; do
+    # while [ $i -lt "10" ]; do
+        # i="9"
         i="9"
         A=$(echo "($i + 1) * 2.4" | bc -l)
         B=$(echo "($i + 1) * 1.2" | bc -l)
         convert $COPYBG -blur $A,$B $CACHEDIR/trans-$i
         local PERC=$(echo "($i+1) * 10" | bc -l)
         if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        i=$[$i+1]
-    done
+        # i=$[$i+1]
+    # done
 
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
 }
@@ -157,16 +158,16 @@ function transition {
 
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Blur wallpaper ...'; fi
 
-    local j="0"
+    # local j="0"
 
-    while [ $j -lt "10" ]; do
+    # while [ $j -lt "10" ]; do
         j="9"
         feh --bg-fill $CACHEDIR/trans-$j
         local PERC=$(echo "($j+1) * 10" | bc -l)
         if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        j=$[$j+1]
+        # j=$[$j+1]
         # sleep $TIME
-    done
+    # done
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
 }
 
@@ -174,16 +175,16 @@ function transition_rev {
 
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Unblur wallpaper ...'; fi
 
-    local j="9"
+    # local j="9"
 
-    while [ $j -ge "0" ]; do
+    # while [ $j -ge "0" ]; do
         j="0"
         # feh --bg-fill $CACHEDIR/trans-$j
         local PERC=$(echo "($j+1) * 10" | bc -l)
         if [ "$VERBOSE" = true ]; then echo 'BLURME: '$PERC'%'; fi
-        j=$[$j-1]
+        # j=$[$j-1]
         # sleep $TIME
-    done
+    # done
 
     feh --bg-fill $(cat $ORIGINAL)
     if [ "$VERBOSE" = true ]; then echo 'BLURME: Done!'; fi
