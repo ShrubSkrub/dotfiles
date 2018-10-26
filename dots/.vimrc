@@ -204,3 +204,4 @@ autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
 autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
 " Compile md to pdf
 autocmd filetype markdown nnoremap <Leader>c :w<CR>:!$HOME/notes/build %<CR>
+autocmd filetype markdown nnoremap <Leader>C :!zathura --fork %:r.pdf<CR>
