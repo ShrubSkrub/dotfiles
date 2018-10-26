@@ -106,6 +106,9 @@ bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
 # Show time/date
 bindsym $mod+comma exec notify-send -t 500 "$(date "+%a %V%n%I:%M:%S%n%m/%d")"
 
+# Toggle blur
+bindsym $mod+b exec ./dotfiles/scripts/toggleWall
+
 #------- OTHER --------------#
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -128,7 +131,7 @@ client.urgent           #AD0056 #AD0056 #FFFFFF
 client.background       #1d1d1d
 
 #------- MODES ------------------------#
-set $wallpaper "wallpaper: (f|g|h|n|o|w) [r|c]"
+set $wallpaper "wallpaper: (f|g|h|n|o|w) [b|c|r]"
 bindsym $mod+Shift+w mode $wallpaper
 mode $wallpaper {
     bindsym f exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/grassfox.jpg"; mode "default"
@@ -138,8 +141,9 @@ mode $wallpaper {
     bindsym o exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/orangefox.jpg"; mode "default"
     bindsym w exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/waterfox.jpg"; mode "default"
 
-    bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
+    bindsym b exec ~/dotfiles/scripts/toggleWall
     bindsym c exec ~/dotfiles/scripts/dmenuWall; mode "default"
+    bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

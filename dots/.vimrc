@@ -31,6 +31,8 @@ Plugin 'ervandew/supertab'
 Plugin 'luochen1990/rainbow'
 " Writing Plugin
 Plugin 'junegunn/goyo.vim'
+" Markdown lists
+Plugin 'dkarter/bullets.vim'
 
 "--- END PLUGINS ------------"
 call vundle#end()
@@ -184,7 +186,7 @@ nmap <Leader>b :Lexplore <Enter>
 " Word Processor Mode!
 func! WordProcessorMode()
   setlocal formatoptions=1
-  setlocal noexpandtab
+  " setlocal noexpandtab
   setlocal spell spelllang=en_us
   set complete+=s
   setlocal wrap
@@ -200,3 +202,6 @@ autocmd filetype cpp nnoremap <Leader>c :w <CR>:!g++ --std=c++11 % -o %:r && ./%
 autocmd filetype cpp nnoremap <Leader>C :!./%:r<CR>
 " Run python
 autocmd filetype python nnoremap <Leader>c :w<CR>:!python3 %<CR>
+" Compile md to pdf
+autocmd filetype markdown nnoremap <Leader>c :w<CR>:!$HOME/notes/build %<CR>
+autocmd filetype markdown nnoremap <Leader>C :!zathura --fork %:r.pdf<CR>
