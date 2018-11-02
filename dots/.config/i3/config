@@ -107,7 +107,7 @@ bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
 bindsym $mod+comma exec notify-send -t 500 "$(date "+%a %V%n%I:%M:%S%n%m/%d")"
 
 # Toggle blur
-bindsym $mod+b exec ./dotfiles/scripts/toggleWall
+bindsym $mod+Shift+b exec ./dotfiles/scripts/toggleWall
 
 #------- OTHER --------------#
 # reload the configuration file
