@@ -1,0 +1,11 @@
+choice=$(echo -e "Logoff\nShutdown\nRestart" | dmenu -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 10 -fn 'Roboto Mono Medium-24' -p 'Power')
+
+if [ "$choice" == "Logoff" ];then
+i3-msg exit
+elif [ "$choice" == "Shutdown" ];then
+shutdown now
+elif [ "$choice" == "Restart" ];then
+shutdown -r now
+else
+exit 1
+fi

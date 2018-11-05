@@ -33,9 +33,9 @@ mkdir ~/.config/i3status
 cp ~/dotfiles/dots/.config/i3status/config ~/.config/i3status/config
 
 # Install google fonts
-echo "Installing google fonts..."
-cd ~
-~/dotfiles/scripts/installers/googleFontsInstaller
+#echo "Installing google fonts..."
+#cd ~
+#~/dotfiles/scripts/installers/googleFontsInstaller
 
 # Install Microsoft fonts (ugh) | TODO Get working
 # echo "Installing Microsoft fonts..."
