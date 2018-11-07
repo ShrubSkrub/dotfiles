@@ -1,0 +1,335 @@
+#------- BINDINGS ---------------------#
+set $mod Mod1
+floating_modifier $mod
+
+#--- WINDOW CONTROL ---------#
+bindsym $mod+Shift+q kill
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+semicolon split h
+bindsym $mod+apostrophe split v
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+a focus parent
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+c move absolute position center
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+a workspace prev
+bindsym $mod+d workspace next
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+m move scratchpad
+bindsym $mod+m scratchpad show
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym r mode "default"
+}
+
+#------- APPS/STUFF ---------#
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Open dense terminal
+bindsym $mod+Shift+Return exec xterm -fa terminus -fs 10
+
+# Skinned dmenu!
+bindsym $mod+Shift+d exec "dmenu_run -nf '#A9AEB4' -nb '#161219' -sb '#A9AEB4' -sf '#262626' -l 10 -fn 'Roboto Mono Medium-24' -p '>'"
+
+# Open quick vim/todo floating term
+bindsym $mod+v exec xterm -T todof -e "vim -c 'Goyo | hi CursorLine cterm=NONE' $HOME/todo.md"
+for_window [instance="xterm" title="todof"] floating enable;
+for_window [instance="xterm" title="todof"] resize shrink left 70, resize shrink right 70, resize grow down 75, resize grow up 75;
+for_window [instance="xterm" title="todof"] move position center;
+
+# Quick open Firefox
+bindsym $mod+Shift+f exec firefox
+
+# Lock with i3lock
+bindsym $mod+n exec i3lock -t -f -i $(find ~/dotfiles/misc/lockscreens -name "*.png" | shuf -n1)
+
+# Open shudown menu with script
+# bindsym $mod+n exec ~/dotfiles/scripts/power
+
+# Trackpad toggle
+bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
+
+# Show time/date
+bindsym $mod+comma exec notify-send -t 500 "$(date "+%a %V%n%I:%M:%S%n%m/%d")"
+
+# Toggle blur
+bindsym $mod+b exec ./dotfiles/scripts/toggleWall
+
+#------- OTHER --------------#
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#------- WINDOW CUSOMIZATIONS ---------#
+font pango:Roboto Mono Medium 10
+new_window pixel 0
+new_float pixel 0
+hide_edge_borders both
+
+# Colors
+# client.focused          #262626 #262626 #49B5B5
+client.focused          #A9AEB4 #A9AEB4 #262626
+client.focused_inactive #262626 #262626 #A9AEB4
+client.unfocused        #161219 #161219 #A9AEB4
+client.urgent           #AD0056 #AD0056 #FFFFFF
+client.background       #1d1d1d
+
+#------- MODES ------------------------#
+set $wallpaper "wallpaper: (f|g|h|n|o|w) [b|c|r]"
+bindsym $mod+Shift+w mode $wallpaper
+mode $wallpaper {
+    bindsym f exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/grassfox.jpg"; mode "default"
+    bindsym g exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/greenwall.jpg"; mode "default"
+    bindsym h exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/husky.jpg"; mode "default"
+    bindsym n exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/carnight.jpg"; mode "default"
+    bindsym o exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/orangefox.jpg"; mode "default"
+    bindsym w exec --no-startup-id feh --bg-fill "$HOME/dotfiles/wallpapers/waterfox.jpg"; mode "default"
+
+    bindsym b exec ~/dotfiles/scripts/toggleWall
+    bindsym c exec ~/dotfiles/scripts/dmenuWall; mode "default"
+    bindsym r exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $launch "launch: (f) [d|g|r|s|v|w|x]"
+bindsym $mod+Tab mode $launch
+mode $launch {
+    bindsym f exec firefox; mode "default"
+
+    bindsym d exec notify-send -t 3000 "Doing:\n$(doing w)"; mode "default"
+    bindsym g mode $mode_gaps
+    bindsym r exec ~/dotfiles/scripts/dmenuScripts; mode "default"
+    bindsym s mode $screencap
+    bindsym v mode $volume
+    bindsym w mode $wallpaper
+    bindsym x exec ~/dotfiles/scripts/dmenuXtheme; mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+
+# Screenshots!
+set $screencap "screencap: (s|d|w|p) [r]"
+mode $screencap {
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"; mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+set $repeatScreencap "R screencap: (s|d|w|p)"
+mode $screencap {
+    bindsym s exec scrot -q 100 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym d exec scrot -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym w exec scrot -u -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+    bindsym p exec scrot -s -q 100 -d 5 '%m:%d_%H:%M:%S.jpg' -e "mv $f $HOME/screencaps"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym Tab mode "default"
+}
+
+# Special mode to use alt key combinations
+bindsym $mod+Alt_R mode "passthrough"
+mode "passthrough" {
+    bindsym $mod+Alt_R mode "default"
+}
+
+set $volume "volume: [u]p  [d]own  [m]ute"
+bindsym $mod+Shift+v mode $volume
+mode $volume {
+    bindsym u exec volume up
+    bindsym d exec volume down
+    bindsym m exec volume mute toggle
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym v mode "default"
+}
+
+#------- i3 BAR -----------------------#
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+        tray_output primary
+
+        i3bar_command i3bar -t
+        font pango:Roboto Mono Regular 10
+
+        # hidden bar, show with mod
+        mode hide
+        hidden_state hide
+        modifier $mod
+
+        # top or bottom?
+        position bottom
+
+  colors {
+    background #000000
+    statusline #ADADAD
+    separator  #777777
+
+    focused_workspace  #ADADAD #ADADAD #000000
+    active_workspace   #222222 #222222 #FFFFFF
+    inactive_workspace #000000 #000000 #ADADAD
+    urgent_workspace   #AD0056 #AD0056 #FFFFFF
+    binding_mode       #AD0056 #AD0056 #FFFFFF
+  }
+}
+bindsym $mod+i bar mode toggle
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#------- i3 GAPS SPECIFIC -------------#
+gaps inner 20
+gaps outer 5
+# smart_gaps on
+
+set $mode_gaps gaps: (o|i|r)
+set $mode_gaps_outer outer: (+|-|0) 5px global | shift + (+|-|0) 5px local | (8|9) 1px global | (r) reset | [i]
+set $mode_gaps_inner inner: (+|-|0) 5px global | shift + (+|-|0) 5px local | (8|9) 1px global | (r) reset | [o]
+bindsym $mod+Shift+g mode "$mode_gaps"
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym r      gaps inner all set 20; gaps outer all set 5
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym Shift+plus  gaps inner current plus 5
+        bindsym Shift+minus gaps inner current minus 5
+        bindsym Shift+0     gaps inner current set 0
+
+        bindsym plus  gaps inner all plus 5
+        bindsym minus gaps inner all minus 5
+        bindsym 0     gaps inner all set 0
+
+        bindsym 8     gaps inner all plus 1
+        bindsym 9     gaps inner all minus 1
+
+        bindsym r     gaps inner all set 20
+
+        bindsym o     mode $mode_gaps_outer
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym Shift+plus  gaps outer current plus 5
+        bindsym Shift+minus gaps outer current minus 5
+        bindsym Shift+0     gaps outer current set 0
+
+        bindsym plus  gaps outer all plus 5
+        bindsym minus gaps outer all minus 5
+        bindsym 0     gaps outer all set 0
+
+        bindsym 8     gaps inner all plus 1
+        bindsym 9     gaps inner all minus 1
+
+        bindsym r     gaps outer all set 5
+
+        bindsym i     mode $mode_gaps_inner
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#------- STARTUP ----------------------#
+# Set background
+exec --no-startup-id feh --randomize --bg-fill $HOME/dotfiles/wallpapers/*
+
+# Setup xmodmap
+exec xmodmap $HOME/.Xmodmap
+exec xmodmap $HOME/.Xmodmap
+# Buggy, but seems to work after two tries, so whatever
+
+# Lock when afk | I can't tell if this is working or not...
+exec --nostartup-id xautolock -time 1 -locker i3lock
+
+#nmcli applet
+exec --no-startup-id nm-applet
+
+#set theme
+exec --no-startup-id xrdb $HOME/.Xdefaults
+
+#gallium services
+exec --no-startup-id xfsettingsd
+exec --no-startup-id xbindkeys_autostart
+exec --no-startup-id xfce4-volumed
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id galliumos-update-notifier`
+
+# blur background
+exec --no-startup-id ./dotfiles/scripts/toggleWall
+
+# Start compton and open terminal
+exec --no-startup-id xterm -e "compton -b;bash"
+
+
+
+
+
+
