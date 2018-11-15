@@ -230,7 +230,7 @@ bar {
         # modifier $mod
 
         # top or bottom?
-        position bottom
+        position top
 
   colors {
     background #000000
