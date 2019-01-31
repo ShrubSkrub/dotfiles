@@ -109,6 +109,9 @@ bindsym Alt_R exec ./dotfiles/scripts/notifStatus
 # Toggle blur
 bindsym $mod+Shift+b exec ./dotfiles/scripts/toggleWall
 
+# Quickly open notes
+bindsym $mod+Shift+n exec ./notes/open
+
 #------- OTHER --------------#
 # reload the configuration file
 bindsym $mod+Shift+c reload

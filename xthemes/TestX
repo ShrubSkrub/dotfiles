@@ -13,42 +13,27 @@ xterm*BorderWidth: 0
 xterm*internalBorder: 3
 
 
-! special
-*.foreground:   #A9AEB4
-*.background:   #161219
-*.cursorColor:  #A9AEB4
-
-! black
-*.color0:       #191D30
-*.color8:       #191D30
-
-! red
-*.color1:       #C41A63
-*.color9:       #C41A63
-
-! green
-*.color2:       #484F59
-*.color10:      #484F59
-
-! yellow
-*.color3:       #689EB4
-*.color11:      #689EB4
-
-! blue
-*.color4:       #616A73
-*.color12:      #616A73
-
-! magenta
-*.color5:       #0F8182
-*.color13:      #0F8182
-
-! cyan
-*.color6:       #49B5B5
-*.color14:      #49B5B5
-
-! white
-*.color7:       #A9AEB4
-*.color15:      #A9AEB4
+*.background: #3f3f3f
+*.foreground: #dcdccc
+*.cursorColor: #aaaaaa
+! *.colorUL: #366060
+! *.underlineColor: #dfaf8f
+*.color0: #3f3f3f
+*.color1: #cc9393
+*.color2: #7f9f7f
+*.color3: #d0bf8f
+*.color4: #6ca0a3
+*.color5: #dc8cc3
+*.color6: #93e0e3
+*.color7: #dcdccc
+*.color8: #000000
+*.color9: #dca3a3
+*.color10: #bfebbf
+*.color11: #f0dfaf
+*.color12: #8cd0d3
+*.color13: #dc8cc3
+*.color14: #93e0e3
+*.color15: #ffffff
 
 ! Copy to clipboard
 xterm.*.selectToClipboard: true
