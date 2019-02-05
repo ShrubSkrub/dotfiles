@@ -51,6 +51,10 @@ You'll have to do those manually, lazy.
 
 From the Crosh Shell, run `sudo edit-chroot -b xenial`
 
+## Further reference on Cruton
+
+can be found [here](https://github.com/dnschneid/crouton/wiki/Crouton-Command-Cheat-Sheet).
+
 ## Other info
 All actual configuration files are found under `dots` in the same way they would be if it was under `~`.
 
