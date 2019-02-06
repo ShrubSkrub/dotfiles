@@ -1,0 +1,10 @@
+notify-send -t 3000 "
+$(wmctrl -d | awk '{if ($2 == "*")
+    print "["$9"]"
+else
+    print $9}' | paste -d"-" -s)
+--
+$(date "+%a %V%n[%H:%M:%S]%n%m/%d")
+--
+$(cat /sys/class/power_supply/BAT0/uevent | awk -F"=" '$1 ~ /CHARGE_NOW/ { print $2 / 3490000 * 100 }' | cut -c-5)%
+"

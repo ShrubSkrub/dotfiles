@@ -104,10 +104,13 @@ bindsym $mod+F10 exec volume up
 bindsym $mod+period exec ./dotfiles/scripts/xinputToggle
 
 # Show time/date
-bindsym $mod+comma exec notify-send -t 500 "$(date "+%a %V%n%I:%M:%S%n%m/%d")"
+bindsym Alt_R exec ./dotfiles/scripts/notifStatus
 
 # Toggle blur
-bindsym $mod+b exec ./dotfiles/scripts/toggleWall
+bindsym $mod+Shift+b exec ./dotfiles/scripts/toggleWall
+
+# Quickly open notes
+bindsym $mod+Shift+n exec ./notes/open
 
 #------- OTHER --------------#
 # reload the configuration file
@@ -227,10 +230,10 @@ bar {
         # hidden bar, show with mod
         mode hide
         hidden_state hide
-        modifier $mod
+        # modifier $mod
 
         # top or bottom?
-        position bottom
+        position top
 
   colors {
     background #000000
@@ -249,7 +252,7 @@ bindsym $mod+i bar mode toggle
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #------- i3 GAPS SPECIFIC -------------#
 gaps inner 15
-gaps outer 0
+gaps outer 15
 # smart_gaps on
 
 set $mode_gaps gaps: (o|i|r)
