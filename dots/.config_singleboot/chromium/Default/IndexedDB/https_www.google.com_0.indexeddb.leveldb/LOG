@@ -1,0 +1,3 @@
+2018/11/05-08:47:07.143 31017 Reusing MANIFEST /home/matt/.config/chromium/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2018/11/05-08:47:07.144 31017 Recovering log #3
+2018/11/05-08:47:07.144 31017 Reusing old log /home/matt/.config/chromium/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/000003.log 

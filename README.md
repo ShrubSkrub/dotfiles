@@ -1,8 +1,5 @@
 # dotfiles
-Just a repository for my dotfiles...
-
-![Image of lockscreen](./misc/lockscreens/green.png?raw=true "Lockscreen")
-![Image of setup](./misc/screencap.jpg?raw=true "Setup")
+Forked from shrubskrub's dotfiles. **Now with 100% less foxes!**
 
 ### Ingredients:
 * **WM:** i3-gaps (w/compton)
@@ -16,6 +13,16 @@ Just a repository for my dotfiles...
 * **Lockscreen:** i3lock
 
 ## Setup
+
+Chroot:
+Download from 
+https://goo.gl/fd3zc
+
+Next, run: `sudo sh ~/Downloads/crouton -r xenial -t xorg`
+
+then install git:
+`sudo apt-get install git`
+
 After cloning this repo to your home folder...
 1. Run `dotfiles/scripts/installers/installscriptP1`
 2. Start i3 and run through the setup
@@ -30,6 +37,20 @@ A few things will not be installed automatically:
 * Chromebook specific Xmodmap configuration (for keybinds such as `Search` to `Ctrl`)
 
 You'll have to do those manually, lazy.
+## Re-installing from a .tar.gz file
+
+1. Download cruton from https://goo.gl/fd3zc
+2. Go to the crosh terminal (ctrl + alt + t) and type `shell`
+3. Restore the backup with `sudo sh -e ~/Downloads/crouton -f path_to_backup.tar.gz`
+4. Enter the chroot with `sudo enter-chroot xinit`
+
+## Backing up to a .tar.gz file
+
+From the Crosh Shell, run `sudo edit-chroot -b xenial`
+
+## Further reference on Cruton
+
+can be found [here](https://github.com/dnschneid/crouton/wiki/Crouton-Command-Cheat-Sheet).
 
 ## Other info
 All actual configuration files are found under `dots` in the same way they would be if it was under `~`.

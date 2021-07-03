@@ -1,0 +1,7 @@
+#! /bin/bash
+# Build a pdf from tex file
+name=${1%.*}
+echo $name
+echo "converting to pdf"
+# pandoc --template=default.tex -V geometry=margin=1in -o $name.pdf $1
+pdftex $1

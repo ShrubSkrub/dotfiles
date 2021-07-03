@@ -3,11 +3,24 @@ cd ~
 # Install i3 gaps (ripped from https://github.com/Airblader/i3/wiki/Compiling-&-Installing)
 echo "Installing i3gaps dependencies..."
 
+sudo apt-get install software-properties-common # fixed add-apt-repository not found
 sudo add-apt-repository ppa:aguignard/ppa
 sudo apt-get update
 sudo apt-get install libxcb-xrm-dev
 
-sudo apt-get install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm-dev
+sudo apt-get install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+libstartup-notification0-dev libxcb-randr0-dev \
+libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+autoconf libxcb-xrm-dev
+
+sudo apt-get install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
+libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
+libstartup-notification0-dev libxcb-randr0-dev \
+libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
+libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
+autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 
 echo "Installing i3gaps..."
 # clone the repository
@@ -32,9 +45,9 @@ mkdir ~/.config/i3status
 cp ~/dotfiles/dots/.config/i3status/config ~/.config/i3status/config
 
 # Install google fonts
-echo "Installing google fonts..."
-cd ~
-~/dotfiles/scripts/installers/googleFontsInstaller
+#echo "Installing google fonts..."
+#cd ~
+#~/dotfiles/scripts/installers/googleFontsInstaller
 
 # Install Microsoft fonts (ugh) | TODO Get working
 # echo "Installing Microsoft fonts..."

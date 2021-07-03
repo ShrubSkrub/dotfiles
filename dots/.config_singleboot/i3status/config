@@ -1,0 +1,100 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#2DAD91"
+  color_degraded = "#82AD2F"
+  color_bad = "#AD0056"
+}
+
+# order += "run_watch DHCP"
+# order += "run_watch VPNC"
+# order += "path_exists VPN"
+# order += "cpu_temperature 0"
+# order += "cpu_usage"
+# order += "load"
+order += "disk /"
+order += "tztime local"
+order += "battery 0"
+order += "ipv6"
+order += "ethernet eth0"
+order += "wireless wlp1s0"
+
+wireless wlp1s0 {
+        format_up = " %quality [ %essid ] %bitrate "
+#         format_down = " Wifi "
+        format_down = " No internet! "
+        align = "center"
+        min_width = 315
+}
+
+ethernet eth0 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = " E: %ip (%speed) "
+        format_down = ""
+        align = "center"
+        min_width = 270
+}
+
+ipv6 {
+    format_up = "%ip"
+    format_down = ""
+}
+
+battery 0 {
+        format = " %status%percentage - %remaining "
+        format_down = "No battery - WTF did you do?"
+        status_chr = "Char - "
+        status_bat = ""
+        status_full = "Full - "
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 20
+        threshold_type = time
+        hide_seconds = true
+        align = "center"
+        min_width = 200
+}
+
+tztime local {
+        format = " %a %V - %I:%M:%S - %m/%d "
+        align = "center"
+        min_width = 300
+}
+
+disk "/" {
+        format = " %free "
+        prefix_type = custom
+        low_threshold = 3.5
+        threshold_type = gbytes_avail
+        align = "center"
+        min_width = 125
+}
+
+# load {
+#         format = " %5min "
+# }
+
+# cpu_usage {
+#     format = " %usage "
+# }
+
+# cpu_temperature 0 {
+#         format = "T: %degrees °C"
+#         path = " /sys/devices/platform/coretemp.0/temp1_input "
+# }
+
+# run_watch DHCP {
+#         pidfile = "/var/run/dhclient*.pid"
+#     format_down=""
+# }
+
+# run_watch VPNC {
+#         # file containing the PID of a vpnc process
+#         pidfile = "/var/run/vpnc/pid"
+#     format_down=""
+# }
+
+# path_exists VPN {
+#         # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+#         path = " /proc/sys/net/ipv4/conf/tun0 "
+#     format_down=" VPN "
+# }
